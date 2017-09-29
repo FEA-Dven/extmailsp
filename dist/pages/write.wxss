@@ -1,0 +1,304 @@
+
+.placeholder{
+  font-size:14px;
+}
+.defaultbtn{
+  width:auto;
+  height: 24px;
+  float:left;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  background-color: white;
+  color:#000;
+  line-height:24px;
+  outline:none;
+  margin-top:8px;
+  margin-left:10px;
+  font-size:12px;
+  padding:0 8px;
+}
+.writehead{
+  background-color:#fafafa;
+  width:100%;
+  float:left;
+  height: 40px;
+  padding:0 10px;
+  box-sizing:border-box;
+}
+.savebtn{
+  background-color: #1aad19;
+  color:white;
+  border-color:#1aad19;
+}
+.sendbtn{
+  background-color: #0089ce;
+  color:white;
+  border-color:#0089ce;
+  float:right;
+  margin-right:5px;
+}
+.theme{
+  width:100%;
+  height:auto;
+  float:left;
+  padding:0 15px;
+  padding-bottom:20px;
+  box-sizing:border-box;
+  border-top:1px solid #dadada;
+  /* border-bottom:1px solid #dadada; */
+  background-color: white;
+}
+.themeItem{
+  width:100%;
+  height:auto;
+  float:left;
+  border-bottom:1px solid #dadada;
+  padding:0 5px;
+  box-sizing:border-box;
+}
+.themeItemleft{
+  width:15%;
+  height:50px;
+  float:left;
+  font-size:30rpx;
+  line-height:50px;
+}
+.usercheck{
+  width:60%;
+  height:50px;
+  float:left;
+}
+.checkUsername{
+  width:100%;
+  float:left;
+  height: 20px;
+  line-height:20px;
+  margin-top:5px;
+  font-size:14px;
+}
+.checkEmail{
+  width:100%;
+  float:left;
+  height: 20px;
+  line-height:20px;
+  font-size:12px;
+  color:#999;
+}
+.writeBtn{
+  width:15%;
+  height: 30px;
+  background-color: #f9f9f9;
+  color:black;
+  line-height:30px;
+  float:right;
+  margin-top:10px;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  padding:0 10px;
+  margin-left:3%;
+  outline:none;
+  font-size:10px;
+}
+.themeItemmid{
+  width:75%;
+  height:auto;
+  float:left;
+  padding:0 15px;
+  box-sizing:border-box;
+  padding-bottom:10px;
+}
+.themeItemright{
+  width:10%;
+  height:50px;
+  float:right;
+}
+.adduserbtn{
+  float:right;
+  width:24px;
+  height: 24px;
+  margin-top:13px;
+  margin-right: 5px;
+}
+.cellcontainer{
+  width:100%;
+  background-color: white;
+  float:left;
+}
+.sub-item{
+  background-color: #f2f2f2;
+  width:100%;
+  float:left;
+  padding:0 15px;
+  box-sizing:border-box;
+  border-bottom:1px solid #dadada;
+  height: 30px;
+  line-height:30px;
+  font-size:14px;
+}
+.subject{
+  height: 50px;
+  border:none;
+  outline:none;
+  width:80%;
+  font-size:28rpx;
+}
+.textTheme{
+  width:100%;
+  height: 300px;
+  float:left;
+  margin-top:15px;
+  resize:none;
+  border:none;
+  outline:none;
+  font-size:32rpx;
+}
+.mailname{
+  width:auto;
+  height: 20px;
+  line-height:20px;
+  float:left;
+  margin-left:6px;
+  margin-right:6px;
+  color:white;
+  border-radius:8px;
+  border:1px solid #0089ce;
+  outline:none;
+  background-color: #0089ce;
+  font-size:12px;
+  padding:0 10px;
+  margin-top:15px;
+}
+.itemCheck{
+  background-color: white;
+  color:#0089ce;
+  border:1px solid #0089ce;
+  width:auto;
+  height: 20px;
+  line-height:20px;
+  float:left;
+  margin-left:6px;
+  margin-right:6px;
+  border-radius:8px;
+  outline:none;
+  font-size:12px;
+  padding:0 10px;
+  margin-top:15px;
+}
+.footer{
+  width:100%;
+  height: auto;
+  background-color:#f2f2f2 ;
+  float:left;
+  border-bottom:1px solid #dadada;
+}
+.blank{
+  float:left;
+  width:100%;
+  height: 100px;
+}
+.oldmaildiv{
+  width:100%;
+  float:left;
+  height: 40px;
+  background-color:#f2f2f2;
+  line-height:40px;
+  color:black;
+  text-indent:15px;
+  font-size:14px;
+}
+.norfont{
+  float:left;
+  width:auto;
+  color:black;
+  margin-top:0;
+  height: 40px;
+}
+.editbtn{
+  float:left;
+  width:auto;
+  margin-left:5px;
+  color:#0089ce;
+  margin-top:0;
+  height: 40px;
+}
+.uploader-example {
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .4);
+    float:left;
+    box-sizing:border-box;
+}
+.uploader-btn-div{
+  width:25%;
+  float:left;
+}
+.uploader-example .uploader-btn {
+  margin-right: 4px;
+  background-color: #0089ce;
+  border-color:#0089ce;
+  color:white;
+}
+.uploader-example .uploader-list {
+  max-height: 440px;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.uploader-file-icon{
+  display:none !important;
+}
+.uploader-btn:hover{
+  background-color: #0089ce !important;
+}
+.uploader-file-status{
+  width:25% !important;
+  text-indent: 10px !important;
+}
+.uploader-file-actions{
+  width:15% !important;
+}
+.uploader-file-meta{
+  width:1% !important;
+} 
+
+.zhushi{
+  color:#000;
+  width:75%;
+  margin-top:5px;
+  float:left;
+  text-align:left;
+}
+.putUserInput{
+  width:40%;
+  height: 30px;
+  float:left;
+  outline:none;
+  border:none;
+  margin-top:10px;
+  font-size:32rpx;
+}
+.uploaddiv{
+  width: 100%;
+  font-size: 12px;
+  float: left;
+  box-sizing: border-box;
+  margin-top:30px;
+  height:50px;
+  border-bottom:1px solid #dadada;
+  border-top:1px solid #dadada;
+}
+.uploadimg{
+  width:60px;
+  height: 30px;
+  float:left;
+  margin-left:15px;
+  background-color: #0089ce;
+  color:white;
+  border-radius:6px;
+  line-height:30px;
+  text-align:center;
+  padding:0 10px;
+  margin-top: 10px;
+}
+

@@ -1,0 +1,11 @@
+
+  <view class="logo">
+      <image src="../assets/mylogo.png" class="logostyle" height="47" width="207"/>
+  </view>
+  <view class="inputdiv">
+    <input type="text" class="loginput {{firstclick ? 'check' : ''}}" bindfocus="focusEInput"  v-model="emailInput" bindinput="getemailInput" placeholder="请输入邮箱"/>
+    <input type="text" class="loginput password {{secondclick ? 'check' : ''}}" bindfocus="focusPInput" bindinput="getpasswordInput" placeholder="请输入邮箱密码"/>
+  </view> 
+  <view class="logdiv">
+    <button class="logbtn" bindtap="loger" hover-class="none">登录</button>
+  </view>

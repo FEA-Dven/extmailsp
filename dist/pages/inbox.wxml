@@ -1,0 +1,13 @@
+
+  <view class="header">
+      <image src="../assets/mylogo.png" class="inboxlogo"/>
+    <view bindtap="refresh"> 
+      <image class="refresh" src="../assets/refresh.png" alt=""/> 
+    </view>  
+  </view>
+  <view class="welcomeuser">您好,{{username}}</view>
+    <view class="inboxlist"  wx:for="{{folders}}" wx:key="index" data-name="{{item.name}}" data-id="{{item.id}}" bindtap="getmaillist">
+      <span class="inboxname">{{item.name}}</span>
+      <image src="../assets/h_right.png" class="j_right"/>
+      <span class="reddot">{{item.data.count_total}}</span>
+    </view>

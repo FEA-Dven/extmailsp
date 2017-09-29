@@ -1,0 +1,588 @@
+<style>
+.header{
+    width:100%;
+    height: 40px;
+    border-bottom:1px solid #dadada;
+    position:relative;
+    text-align:center;
+  }
+  .inboxlogo{
+    float:left;
+    margin-top:11px;
+    height: 23px; 
+    width: 103px;
+    margin-left:15px;
+  }
+.searchdiv{
+  float:right;
+  margin-right:15px;
+  height: 40px;
+  box-sizing:border-box;
+  width:140px;
+}
+.searchpic{
+  width:18px;
+  height: 18px;
+  position:absolute;
+  right:18px;
+  top:50%;
+  margin-top:-9px;
+}
+.searchInput{
+  width:100%;
+  padding:0 25px;
+  box-sizing:border-box;
+  height: 24px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  line-height:24px;
+  margin-top:8px;
+  outline:none;
+  font-size:14px;
+}
+.headinfo{
+  width:100%;
+  height: 50px;
+  border-bottom:1px solid #dadada;
+}
+.left{
+  width:24px;
+  height: 24px;
+  float:left;
+  margin-top:13px;
+  margin-left:10px;
+}
+.foldername{
+  float:left;
+  width:auto;
+  height: 50px;
+  line-height:50px;
+  margin-left:10px;
+  font-size:16px;
+}
+.kgdiv{
+  width:10%;
+  margin-left:2%;
+  height:80px;
+  float:left;
+}
+.mailtheme{
+  float:left;
+  height: 80px;
+  width:85%;
+  margin-left:1%;
+}
+.checkeritem {
+  border: 1px solid #ccc;
+  width:16px;
+  height: 16px;
+  border-radius:50%;
+  margin-top:5px;
+  float:left;
+}
+.demo1-item-selected {
+  border: 1px solid #0089ce;
+  background-color: #0089ce;
+}
+.maillist{
+  width:100%;
+  height: 80px;
+  float:left;
+  border-bottom:1px solid #dadada;
+  background-color: white;
+}
+.s_maillist{
+  background-color: #ebf6ff;
+}
+.sendtor{
+  float:left;
+   width:100%;
+  height: 25px;
+  line-height:25px;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  color:#000000;
+  font-size:16px;
+}
+.b_sendtor{
+  color:#0089ce;
+}
+.title{
+  float:left;
+  width:100%;
+  height: 25px;
+  line-height:25px;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size:16px;
+}
+.zhuti{
+  float:left;
+  width:100%;
+  height: 25px;
+  line-height:25px;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size:14px;
+  color:#ccc;
+}
+.maillistfooter{
+  height: 40px;
+  width:100%;
+  background-color: #f2f2f2;
+  float:left;
+  border-bottom:1px solid #dadada;
+}
+.allSelect{
+  width:16px;
+  height: 16px;
+  margin-top:10px;
+  margin-left: 10px;
+  float:left;
+  border-radius:50%;
+  border:1px solid #ccc;
+  background-color: white;
+}
+.s_length{
+  width:10px;
+  height: 16px;
+  margin-top:12px;
+  margin-left: 10px;
+  float:left;
+  color:#000;
+  line-height:16px;
+  font-size:12px;
+}
+.check{
+  background-color: #0089ce;
+  border:1px solid #0089ce;
+}
+.closebtn{
+  width:18px;
+  height: 18px;
+  float:left;
+  margin-top:11px;
+  margin-left: 5px;
+}
+.defaultbtn{
+  width:auto;
+  height: 24px;
+  float:left;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  background-color: white;
+  color:#000;
+  line-height:24px;
+  outline:none;
+  margin-top:8px;
+  margin-left:10px;
+  font-size:12px;
+  padding:0 8px;
+}
+.slh{
+  width:16px;
+  height: 16px;
+  line-height:24px;
+  margin-top:4px;
+}
+.pagecount{
+  height: 30px;
+  margin-top:5px;
+  width:75px;
+  margin-left:5px;
+  float:left;
+}
+.pagecounttwo{
+  margin-left:5px;
+}
+.pageinfo{
+  width:auto;
+  margin-top:5px;
+  height: 20px;
+  float:left;
+  line-height:20px;
+  font-size:12px;
+  margin-left:2px;
+}
+.imgleft{
+  float:left;
+  width:20px;
+  height: 20px;
+  margin-top:5px;
+}
+.imgright{
+  float:left;
+  width:20px;
+  height: 20px;
+  margin-top:5px;
+  margin-left: 2px;
+}
+.hide{
+  display:none;
+}
+.thisblank{
+  width:100%;
+  float:left;
+  height: 150px;
+  background-color: transparent;
+}
+</style>
+<template>
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png"  alt="">
+      <view class="searchdiv">
+        <image wx:if="{{!isSearch}}" src="../assets/search.png" class="searchpic" alt="" bindtap="czMail">
+        <image wx:if="{{isSearch}}" src="../assets/b_cha.png" class="searchpic" alt="" bindtap="czMail">
+        <input type="text" class="searchInput" bindinput="getsearchInput">
+      </view>
+    </view>
+    <view class="headinfo">
+      <image class="left" src="../assets/b_left.png" bindtap="back" alt="">
+      <text class="foldername">{{SelectFolderName}}</text>
+    </view>
+    <block wx:for="{{MailList}}" wx:key="index" >
+        <view class="maillist" :class="{'s_maillist':item.check}">
+          <view class="kgdiv" >
+          <view class="checkeritem" data-index="{{index}}" catchtap="changeCheck" :class="{'demo1-item-selected':item.check}"></view>
+          </view>
+          <view class="mailtheme" catchtap="getMailInfo" data-msgid="{{item.msg_id}}">
+            <view class="sendtor" :class="{'b_sendtor':!item.attr.read}">{{item.from.name}}</view>
+            <view class="title">{{item.subject}}</view>
+            <view class="zhuti">{{item.date_sent}}</view>
+          </view>
+        </view>
+    </block>
+    <view class="maillistfooter">
+        <view class="allSelect" :class="{'check':allselect}" bindtap="AllSelect"></view>
+        <view class="s_length" wx:if="{{demo1.length > 0}}">{{SmailLength}}</view>
+        <image src="../assets/h_close.png" class="closebtn" bindtap="clear" :class="{'hide':!clearSelect}" alt="">
+        <picker bindchange="move" value="{{index}}" data-id="{{item.id}}" range-key="name" range="{{folders}}">
+          <button class="defaultbtn">移动到</button>
+        </picker>
+        <button class="defaultbtn" bindtap="Delmail">删除</button>
+        <picker bindchange="showaction" value="{{index}}" range-key="name" data-id="{{id}}" range="{{action}}">
+          <button class="defaultbtn"><image class="slh" src="../assets/h_slh.png" alt=""></button>
+        </picker>
+        <view class="pagecount" :class="{'pagecounttwo':clearSelect}">
+          <image class="imgleft" bindtap="pageTurnLeft" src="../assets/h_left.png" alt="">
+          <view class="pageinfo">1 / 1</view>
+          <image class="imgright" bindtap="pageTurnRight" src="../assets/h_right.png" alt="">
+        </view>
+      </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class mailist extends wepy.page {
+    config = {
+      navigationBarTitleText: 'ExtMail'
+    }
+    components = {
+
+    } 
+
+    data = {
+     MailList:'',
+     bMailList:'',
+     demo1:[],
+     isSearch:false,
+     fminput:'',
+     SelectFolderName:'',
+     folderid:'',
+     allselect:false,
+     folders:'',
+     action:[{id:0,name:'标为已读'},{id:1,name:'标为未读'}],
+     clearSelect:true,
+    }
+
+    computed = {
+      SmailLength(){
+        return this.demo1.length
+      },
+      clearSelect(){
+        if(this.demo1.length>0){
+          return true
+        }else{
+          return false
+        }
+      }
+    }
+
+    methods = {
+      czMail(){
+        let self = this
+
+        if(self.isSearch){
+          self.MailList = self.bMailList
+          self.isSearch = false
+        }else{
+          let findname = self.fminput
+          let arr=[];
+          self.bMailList = self.MailList
+          self.MailList.forEach((item)=>{
+            if(findname==item.from.email||findname==item.from.name){
+              arr.push(item)
+            }
+          })
+          self.MailList = arr
+          self.isSearch = true
+        }
+      },
+      back(){
+        wepy.navigateBack({
+          delta: 1
+        })
+      },
+      getsearchInput(e){
+       this.fminput = e.detail.value
+      },
+      AllSelect(){
+        let self = this
+        self.allselect = !self.allselect
+        if(self.allselect==true){
+          self.MailList.forEach(function(item){
+            if(item.check==false){
+              self.demo1.push(item)
+            }
+            item.check = true
+          })
+        }else{
+          self.MailList.forEach(function(item){
+            item.check = false
+            self.demo1.splice(0,self.demo1.length)
+          })
+        }
+        
+      },
+      changeCheck(e){
+        let self = this
+        let sy = e.target.dataset.index
+        if(self.MailList[sy].check){
+          let vemail;
+          self.MailList.forEach((item,index)=>{
+            if(sy==index){
+              vemail = item.from.email
+            }
+          })
+          self.demo1.forEach((item,index)=>{
+            if(vemail==item.from.email){
+              self.demo1.splice(index,1)
+            }
+          })
+        }else{
+          self.demo1.push(self.MailList[sy])
+        }
+        if(self.demo1.length!==self.MailList.length){
+          self.allselect = false
+        }else{
+          self.allselect = true
+        }
+        self.MailList[sy].check = !self.MailList[sy].check
+      },
+      showaction(e){
+        let sy = e.detail.value
+        let self = this 
+        let folderid = self.folderid
+        if(self.demo1.length<1){
+          wepy.showToast({
+            title: '请选择邮件',
+            image:'../assets/w_cha.png',
+            duration: 1000
+          })
+        }else{
+          var read;
+          if(self.action[sy].id==0){
+           read = true
+          }else{
+            read = false
+          }
+          self.demo1.forEach(function(item){
+              item.attr.read = read
+              let mydata = {
+                msg:{
+                  folder_id:folderid,
+                  msg_id:item.msg_id,
+                },
+                read:read
+              }
+               wepy.request({
+                 url: 'https://dywsweb.com/set_read',
+                 data: mydata,
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                 method: 'POST',
+                 success: function (res) {
+                   if(res.data=="success"){
+                     wepy.showToast({
+                        title: '操作成功',
+                        duration: 1000
+                      })
+                   }
+                 }
+               });  
+          })
+        } 
+      },
+      Delmail(e){
+        let self = this
+        let folderid = self.folderid
+        if(self.demo1.length<1){
+           wepy.showToast({
+            title: '请选择邮件',
+            image:'../assets/w_cha.png',
+            duration: 1000
+          })
+        }else{
+          self.demo1.forEach(function(item){
+            let mydata = {
+               msg:{
+                 folder_id:folderid,
+                 msg_id:item.msg_id,
+               }
+            }
+              wepy.request({
+              url: 'https://dywsweb.com/msg_delete_actual',
+              data: mydata,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'POST',
+              success: function (res) {
+               if(res.data=='success'){
+                wepy.showToast({
+                  title: '操作成功',
+                  duration: 1000
+                })
+               }
+              }
+            });
+              
+          })
+        }
+      },
+      move(e) {
+        let self = this
+        let folderid = self.folderid
+        let sy = e.detail.value 
+        let ftd = self.folders[sy].id  
+        if(self.demo1.length>0){
+        self.demo1.forEach(function(item){
+          let mvdata = {
+            folder_id_target:ftd,
+            msg:{
+              folder_id:folderid,
+              msg_id:item.msg_id,
+            }
+          }
+        wepy.request({
+           url: 'https://dywsweb.com/msg_move',
+           data: mvdata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+           method: 'POST',
+           success: function (res) {
+             if(res.data=='success'){
+                wepy.showToast({
+                  title: '操作成功',
+                  duration: 1000
+                })
+               }
+           }
+         });
+      })
+      }else{
+        wepy.showToast({
+          title: '请选择邮件',
+          image:'../assets/w_cha.png',
+          duration: 1000
+        })
+      }
+      },
+      clear(){
+        let self = this;
+        self.clearSelect = true;
+        self.allselect = false;
+        self.demo1.splice(0,self.demo1.length);
+        self.MailList.forEach((item)=>{
+          item.check = false
+        })
+      },
+      getMailInfo(e){
+        let self = this
+        let folderid = self.folderid;
+        let foldername = self.SelectFolderName;
+        let msgid = e.currentTarget.dataset.msgid
+        wepy.navigateTo({
+         url: '/pages/mailinfo?folderid='+folderid+'&foldername='+foldername+'&msgid='+msgid
+        })
+      },
+      pageTurnRight(){
+        
+      },
+      pageTurnLeft(){
+        
+      }
+    }
+
+    onLoad(options) {
+      let self = this
+       wepy.showLoading({
+         title: '加载中',
+       })
+      self.SelectFolderName = options.foldername
+      self.folderid = options.folderid
+      let id = options.folderid
+      let page = options.page
+      let perpage = options.perpage
+      let sort = options.sort
+      let category = options.category
+      wepy.setStorageSync("folderid",id)
+      let mydata = {
+        category:category,
+        id:id,
+        page:page,
+        perpage:perpage,
+        sort:sort
+      }
+       wepy.request({
+           url: 'https://dywsweb.com/getmaillist',
+           data: mydata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+           method: 'POST',
+           success: function (res) {
+
+             self.MailList = res.data
+             self.$apply()
+             self.MailList.forEach((item)=>{
+                item.check = false;
+             })
+             wepy.hideLoading()
+           }
+         });
+        wepy.request({
+           url: 'https://dywsweb.com/getfolders',
+           data: {
+           },
+           header: {
+             'content-type': 'application/x-www-form-urlencoded'
+           },
+           method: 'POST',
+           success: function (res) {
+            self.folders = res.data
+
+           }
+         });
+    }
+  }
+</script>

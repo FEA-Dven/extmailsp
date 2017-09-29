@@ -1,0 +1,29 @@
+
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png" alt=""/>
+    </view>
+    <view class="headinfo">
+      <view class="foldername">设置</view>
+    </view>
+    <view class="userInfodiv">
+      <view class="headphotodiv">
+        <image src="{{headphoto}}" background-size="cover" class="headphoto"/>
+      </view>
+        <view class="inputdiv">
+          <view class="label">昵称</view>
+          <input type="text" class="nickname" maxlength="32" bindinput="changenickname" value="{{nickname}}"/>
+        </view>
+        <view class="pretermitdiv">
+          <view class="title">默认发信账号</view>
+          <view class="myradiodiv">
+            <view class="myradio"><view class="checkradio"/></view>
+            <view class="pretermitemail">{{email}}</view>
+           
+            
+          </view>
+           <view class="quitdiv">
+              <view class="quitbtn" bindtap="logout">退出登录</view>
+              <button class="setBtn" bindtap="savesetting">保存</button>
+            </view>
+          </view>
+        </view>

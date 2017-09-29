@@ -1,0 +1,1620 @@
+<style>
+.placeholder{
+  font-size:14px;
+}
+.defaultbtn{
+  width:auto;
+  height: 24px;
+  float:left;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  background-color: white;
+  color:#000;
+  line-height:24px;
+  outline:none;
+  margin-top:8px;
+  margin-left:10px;
+  font-size:12px;
+  padding:0 8px;
+}
+.writehead{
+  background-color:#fafafa;
+  width:100%;
+  float:left;
+  height: 40px;
+  padding:0 10px;
+  box-sizing:border-box;
+}
+.savebtn{
+  background-color: #1aad19;
+  color:white;
+  border-color:#1aad19;
+}
+.sendbtn{
+  background-color: #0089ce;
+  color:white;
+  border-color:#0089ce;
+  float:right;
+  margin-right:5px;
+}
+.theme{
+  width:100%;
+  height:auto;
+  float:left;
+  padding:0 15px;
+  padding-bottom:20px;
+  box-sizing:border-box;
+  border-top:1px solid #dadada;
+  /* border-bottom:1px solid #dadada; */
+  background-color: white;
+}
+.themeItem{
+  width:100%;
+  height:auto;
+  float:left;
+  border-bottom:1px solid #dadada;
+  padding:0 5px;
+  box-sizing:border-box;
+}
+.themeItemleft{
+  width:15%;
+  height:50px;
+  float:left;
+  font-size:30rpx;
+  line-height:50px;
+}
+.usercheck{
+  width:60%;
+  height:50px;
+  float:left;
+}
+.checkUsername{
+  width:100%;
+  float:left;
+  height: 20px;
+  line-height:20px;
+  margin-top:5px;
+  font-size:14px;
+}
+.checkEmail{
+  width:100%;
+  float:left;
+  height: 20px;
+  line-height:20px;
+  font-size:12px;
+  color:#999;
+}
+.writeBtn{
+  width:15%;
+  height: 30px;
+  background-color: #f9f9f9;
+  color:black;
+  line-height:30px;
+  float:right;
+  margin-top:10px;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  padding:0 10px;
+  margin-left:3%;
+  outline:none;
+  font-size:10px;
+}
+.themeItemmid{
+  width:75%;
+  height:auto;
+  float:left;
+  padding:0 15px;
+  box-sizing:border-box;
+  padding-bottom:10px;
+}
+.themeItemright{
+  width:10%;
+  height:50px;
+  float:right;
+}
+.adduserbtn{
+  float:right;
+  width:24px;
+  height: 24px;
+  margin-top:13px;
+  margin-right: 5px;
+}
+.cellcontainer{
+  width:100%;
+  background-color: white;
+  float:left;
+}
+.sub-item{
+  background-color: #f2f2f2;
+  width:100%;
+  float:left;
+  padding:0 15px;
+  box-sizing:border-box;
+  border-bottom:1px solid #dadada;
+  height: 30px;
+  line-height:30px;
+  font-size:14px;
+}
+.subject{
+  height: 50px;
+  border:none;
+  outline:none;
+  width:80%;
+  font-size:28rpx;
+}
+.textTheme{
+  width:100%;
+  height: 300px;
+  float:left;
+  margin-top:15px;
+  resize:none;
+  border:none;
+  outline:none;
+  font-size:32rpx;
+}
+.mailname{
+  width:auto;
+  height: 20px;
+  line-height:20px;
+  float:left;
+  margin-left:6px;
+  margin-right:6px;
+  color:white;
+  border-radius:8px;
+  border:1px solid #0089ce;
+  outline:none;
+  background-color: #0089ce;
+  font-size:12px;
+  padding:0 10px;
+  margin-top:15px;
+}
+.itemCheck{
+  background-color: white;
+  color:#0089ce;
+  border:1px solid #0089ce;
+  width:auto;
+  height: 20px;
+  line-height:20px;
+  float:left;
+  margin-left:6px;
+  margin-right:6px;
+  border-radius:8px;
+  outline:none;
+  font-size:12px;
+  padding:0 10px;
+  margin-top:15px;
+}
+.footer{
+  width:100%;
+  height: auto;
+  background-color:#f2f2f2 ;
+  float:left;
+  border-bottom:1px solid #dadada;
+}
+.blank{
+  float:left;
+  width:100%;
+  height: 100px;
+}
+.oldmaildiv{
+  width:100%;
+  float:left;
+  height: 40px;
+  background-color:#f2f2f2;
+  line-height:40px;
+  color:black;
+  text-indent:15px;
+  font-size:14px;
+}
+.norfont{
+  float:left;
+  width:auto;
+  color:black;
+  margin-top:0;
+  height: 40px;
+}
+.editbtn{
+  float:left;
+  width:auto;
+  margin-left:5px;
+  color:#0089ce;
+  margin-top:0;
+  height: 40px;
+}
+.uploader-example {
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .4);
+    float:left;
+    box-sizing:border-box;
+}
+.uploader-btn-div{
+  width:25%;
+  float:left;
+}
+.uploader-example .uploader-btn {
+  margin-right: 4px;
+  background-color: #0089ce;
+  border-color:#0089ce;
+  color:white;
+}
+.uploader-example .uploader-list {
+  max-height: 440px;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.uploader-file-icon{
+  display:none !important;
+}
+.uploader-btn:hover{
+  background-color: #0089ce !important;
+}
+.uploader-file-status{
+  width:25% !important;
+  text-indent: 10px !important;
+}
+.uploader-file-actions{
+  width:15% !important;
+}
+.uploader-file-meta{
+  width:1% !important;
+} 
+
+.zhushi{
+  color:#000;
+  width:75%;
+  margin-top:5px;
+  float:left;
+  text-align:left;
+}
+.putUserInput{
+  width:40%;
+  height: 30px;
+  float:left;
+  outline:none;
+  border:none;
+  margin-top:10px;
+  font-size:32rpx;
+}
+.uploaddiv{
+  width: 100%;
+  font-size: 12px;
+  float: left;
+  box-sizing: border-box;
+  margin-top:30px;
+  height:50px;
+  border-bottom:1px solid #dadada;
+  border-top:1px solid #dadada;
+}
+.uploadimg{
+  width:60px;
+  height: 30px;
+  float:left;
+  margin-left:15px;
+  background-color: #0089ce;
+  color:white;
+  border-radius:6px;
+  line-height:30px;
+  text-align:center;
+  padding:0 10px;
+  margin-top: 10px;
+}
+
+</style>
+<template>
+  <view class="writehead">
+    <button class="defaultbtn savebtn" bindtap="saveMail">保存</button>
+    <button class="defaultbtn sendbtn" bindtap="sendMail">发送</button>
+  </view>
+  <view class="theme">
+    <view class="themeItem sj">
+      <view class="themeItemleft">收件人:</view>
+      <view class="themeItemmid" bindtap="changeSjFocus">
+          <view wx:key="{{index}}" wx:for="{{sjArr}}">
+            <view class="mailname" :class="{'itemCheck':item.sjCheck}" catchtap="userMethods({{item.email}},'sj')">{{item.username}}</view>
+          </view>
+          <input type="text" class="putUserInput" bindblur="lostsjfocus" data-keyword="sj" focus="{{sjFocus}}" bindinput="putinArr" value="{{sjUserInput}}">
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="sj" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image src="../assets/b_add.png" class="adduserbtn" alt="">
+        </picker>
+      </view>
+      
+    </view>
+    <view class="themeItem sj" wx:if="{{hasSjUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{sjcuname}}</view>
+          <view class="checkEmail">{{sjcuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck('sj')">取消</button>
+        <button class="writeBtn"  bindtap="delcu({{sjcuemail}},'sj')">删除</button>
+      </view>
+    <view class="themeItem cc">
+      <view class="themeItemleft">抄送:</view>
+      <view class="themeItemmid" bindtap="changeCcFocus">
+          <view wx:key="{{index}}" wx:for="{{ccArr}}">
+            <view class="mailname" :class="{'itemCheck':item.ccCheck}" catchtap="userMethods({{item.email}},'cc')">{{item.username}}</view>
+          </view>
+          <input type="text" value="{{ccUserInput}}" class="putUserInput" bindblur="lostccfocus" focus="{{ccFocus}}" bindinput="putinArr" data-keyword="cc">
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="cc" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image src="../assets/b_add.png" class="adduserbtn" alt="">
+        </picker>
+      </view>
+    </view>
+    <view class="themeItem cc" wx:if="{{hasCcUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{cccuname}}</view>
+          <view class="checkEmail">{{cccuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck('cc')">取消</button>
+        <button class="writeBtn"  bindtap="delcu({{cccuemail}},'cc')">删除</button>
+      </view>
+    <view class="themeItem bcc">
+      <view class="themeItemleft">密送:</view>
+      <view class="themeItemmid" bindtap="changeBccFocus">
+          <view wx:key="{{index}}" wx:for="{{bccArr}}">
+            <view class="mailname" :class="{'itemCheck':item.bccCheck}"  catchtap="userMethods({{item.email}},'bcc')">{{item.username}}</view>
+          </view>
+          <input type="text" value="{{bccUserInput}}" class="putUserInput" bindblur="lostbccfocus" focus="{{bccFocus}}" bindinput="putinArr" data-keyword="bcc">
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="bcc" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image  src="../assets/b_add.png"  class="adduserbtn" alt="">
+        </picker>
+      </view>
+    </view>
+    <view class="themeItem bcc" wx:if="{{hasBccUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{bcccuname}}</view>
+          <view class="checkEmail">{{bcccuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck('bcc')">取消</button>
+        <button class="writeBtn"  bindtap="delcu({{bcccuemail}},'bcc')">删除</button>
+      </view>
+      <view class="themeItem">
+        <view class="themeItemleft">
+          主题:
+        </view>
+        <input type="text" class="subject" bindinput="changeSubject" value="{{subject}}">
+      </view>
+      <textarea  class="textTheme" maxlength="5000" bindinput="changeTextarea" placeholder-class="placeholder" placeholder="请输入邮件内容..." value="{{gettextTheme}}"></textarea>
+     
+  </view>
+   <view class="uploaddiv">
+    <view class="uploadimg" bindtap="oploadfile">上传文件</view> 
+   </view>  
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class write extends wepy.page {
+    config = {
+      navigationBarTitleText: 'ExtMail'
+    }
+    components = {
+
+    }
+
+    data = {
+     UserList:'',
+     sjUserInput:null,
+     ccUserInput:null,
+     bccUserInput:null,
+     sjFocus:false,
+     ccFocus:false,
+     bccFocus:false,
+     hasSjUsercheck:false,
+     hasCcUsercheck:false,
+     hasBccUsercheck:false,
+     subject:'',
+     textTheme:'',
+     gettextTheme:'',
+     sjArr:[],
+     ccArr:[],
+     bccArr:[],
+     sjcuname:'',
+     sjcuemail:'',
+     cccuname:'',
+     cccuemail:'',
+     bcccuname:'',
+     bcccuemail:'',
+     composeId:'',
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+      oploadfile(){
+        wx.chooseImage({
+           success: function (res) {
+           var tempFilePaths = res.tempFilePaths
+            wepy.uploadFile({
+              url: 'https://dywsweb.com/upload',
+              filePath: tempFilePaths[0],
+              name: 'file',
+              formData:{
+                'user': 'test'
+              },
+              success: function(res){
+                wepy.showToast({
+                  title: '发送成功',
+                  duration: 1000
+                })
+              }
+            })
+           }
+        })
+      },
+      saveMail(){
+      let self = this
+      let patt = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
+      let format = true
+      if(self.sjUserInput!==''){
+        if(patt.test(self.sjUserInput)){
+          let existsjarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.sjUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.sjArr.length;i++){
+                if(umuban.email==self.sjArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.sjUserInput = ''
+                  canput = false
+                  format = false
+                  existsjarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.sjUserInput,
+              email:self.sjUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.sjArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.sjUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.sjArr.push(mymuban)
+             self.sjUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existsjarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.sjArr.push(usermuban)
+            self.sjUserInput = ''
+          }
+        }else{
+          wepy.showToast({
+            title:'收件人格式错误',
+            image:'../assets/w_cha.png',
+            duration:1000
+          })
+          format = false
+        }
+      }
+      if(self.ccUserInput!==''){
+        if(patt.test(self.ccUserInput)){
+          let existccarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.ccUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.ccArr.length;i++){
+                if(umuban.email==self.ccArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.ccUserInput = ''
+                  canput = false
+                  format = false
+                  existccarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.ccUserInput,
+              email:self.ccUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.ccArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.ccUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.ccArr.push(mymuban)
+             self.ccUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existccarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.ccArr.push(usermuban)
+            self.ccUserInput = ''
+          }
+        }else{
+         wepy.showToast({
+            title:'抄送格式错误',
+            image:'../assets/w_cha.png',
+            duration:1000
+          })
+          format = false
+        }
+      }
+      if(self.bccUserInput!==''){
+        if(patt.test(self.bccUserInput)){
+          let existbccarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.bccUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.bccArr.length;i++){
+                if(umuban.email==self.bccArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.bccUserInput = ''
+                  canput = false
+                  format = false
+                  existbccarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.bccUserInput,
+              email:self.bccUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.bccArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.bccUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.bccArr.push(mymuban)
+             self.bccUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existbccarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.bccArr.push(usermuban)
+            self.bccUserInput = ''
+          }
+        }else{
+          wepy.showToast({
+            title:'密送格式错误',
+            image:'../assets/w_cha.png',
+            duration:1000
+          })
+          format = false
+        }
+      }
+      if(format){
+      let savebcc = []
+      self.bccArr.forEach((item)=>{
+        let savebccmb = {
+          email:'',
+          name:''
+        }
+        savebccmb.email = item.email;
+        savebccmb.name = item.username;
+        savebcc.push(savebccmb)
+      })
+      
+      let savecc = []
+      self.ccArr.forEach((item)=>{
+        let saveccmb = {
+          email:'',
+          name:''
+        }
+        saveccmb.email = item.email;
+        saveccmb.name = item.username;
+        savecc.push(saveccmb)
+      })
+      let savesj = []
+      self.sjArr.forEach((item)=>{
+        let savesjmb = {
+          email:'',
+          name:''
+        }
+        savesjmb.email = item.email;
+        savesjmb.name = item.username;
+        savesj.push(savesjmb)
+      })
+      let from = {
+        email:wepy.getStorageSync('username'),
+        name:wepy.getStorageSync('username')
+      }
+      let composeId = self.composeId
+      let mydata = {
+        bcc:savebcc,
+        body:self.textTheme,
+        cc:savecc,
+        compose_id:composeId,
+        from:from,
+        html:false,
+        priority:0,
+        receipt:true,
+        schedule:'10',
+        subject:self.subject,
+        to:savesj
+      }
+      // console.log(mydata)
+      wepy.request({
+        url: 'https://dywsweb.com/draft_save',
+        data: mydata,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function (res) {
+          wepy.showToast({
+            title: '保存成功',
+            duration: 1000
+          })
+          console.log(res)
+        }
+        })
+      }
+      },
+      sendMail(){
+      let self = this
+      let patt = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
+      let format = true
+      if(self.sjUserInput!==''){
+        if(patt.test(self.sjUserInput)){
+          let existsjarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.sjUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.sjArr.length;i++){
+                if(umuban.email==self.sjArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.sjUserInput = ''
+                  canput = false
+                  format = false
+                  existsjarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.sjUserInput,
+              email:self.sjUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.sjArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.sjUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.sjArr.push(mymuban)
+             self.sjUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existsjarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.sjArr.push(usermuban)
+            self.sjUserInput = ''
+          }
+        }else{
+          if(self.sjUserInput===null){
+            format = true
+          }else{
+            wepy.showToast({
+              title:'收件人格式错误',
+              image:'../assets/w_cha.png',
+              duration:1000
+            })
+            format = false
+          }
+        }
+      }
+      if(self.ccUserInput!==''){
+        if(patt.test(self.ccUserInput)){
+          let existccarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.ccUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.ccArr.length;i++){
+                if(umuban.email==self.ccArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.ccUserInput = ''
+                  canput = false
+                  format = false
+                  existccarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.ccUserInput,
+              email:self.ccUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.ccArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.ccUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.ccArr.push(mymuban)
+             self.ccUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existccarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.ccArr.push(usermuban)
+            self.ccUserInput = ''
+          }
+        }else{
+          if(self.ccUserInput===null){
+            format = true
+          }else{
+            wepy.showToast({
+              title:'抄送用户格式错误',
+              image:'../assets/w_cha.png',
+              duration:1000
+            })
+            format = false
+          }
+        }
+      }
+      if(self.bccUserInput!==''){
+        if(patt.test(self.bccUserInput)){
+          let existbccarr = false
+          let existuserlist = false
+          let canput = true
+          let userindex;
+          let umuban = {
+            username:'',
+            email:'',
+            sjCheck:false,
+            ccCheck:false,
+            bccCheck:false
+          }
+          self.UserList.user.forEach((item,index)=>{
+            if(self.bccUserInput==item.email){
+              umuban.name = item.username
+              umuban.email = item.email
+              existuserlist = true
+              userindex = index
+              for(var i=0;i<self.bccArr.length;i++){
+                if(umuban.email==self.bccArr[i].email){
+                  wepy.showToast({
+                    title:'已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration:1000
+                  })
+                  self.bccUserInput = ''
+                  canput = false
+                  format = false
+                  existbccarr = true
+                }
+              }
+            }
+          })
+          if(existuserlist==false){
+            let mymuban = {
+              username:self.bccUserInput,
+              email:self.bccUserInput,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.bccArr.forEach((item)=>{
+              if(mymuban.email==item.email){
+                canput = false
+                format = false
+                self.bccUserInput = ''
+                wepy.showToast({
+                  title:'已存在用户',
+                  image:'../assets/w_cha.png',
+                  duration:1000
+                })
+              }
+            })   
+            if(canput){
+             self.bccArr.push(mymuban)
+             self.bccUserInput = ''
+            }
+          }
+          if(existuserlist==true&&existbccarr==false){
+            let usermuban = {
+              username:self.UserList.user[userindex].username,
+              email:self.UserList.user[userindex].email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.bccArr.push(usermuban)
+            self.bccUserInput = ''
+          }
+        }else{
+          if(self.bccUserInput===null){
+            format = true
+          }else{
+            wepy.showToast({
+              title:'密送用户格式错误',
+              image:'../assets/w_cha.png',
+              duration:1000
+            })
+            format = false
+          }
+        }
+      }
+      if(format){
+      let savebcc = []
+      self.bccArr.forEach((item)=>{
+        let savebccmb = {
+          email:'',
+          name:''
+        }
+        savebccmb.email = item.email;
+        savebccmb.name = item.username;
+        savebcc.push(savebccmb)
+      })
+      
+      let savecc = []
+      self.ccArr.forEach((item)=>{
+        let saveccmb = {
+          email:'',
+          name:''
+        }
+        saveccmb.email = item.email;
+        saveccmb.name = item.username;
+        savecc.push(saveccmb)
+      })
+      let savesj = []
+      self.sjArr.forEach((item)=>{
+        let savesjmb = {
+          email:'',
+          name:''
+        }
+        savesjmb.email = item.email;
+        savesjmb.name = item.username;
+        savesj.push(savesjmb)
+      })
+      let from = {
+        email:wepy.getStorageSync('username'),
+        name:wepy.getStorageSync('username')
+      }
+      let composeId = self.composeId
+      let mydata = {
+        bcc:savebcc,
+        body:self.textTheme,
+        cc:savecc,
+        compose_id:composeId,
+        from:from,
+        html:false,
+        priority:0,
+        receipt:true,
+        schedule:'10',
+        subject:self.subject,
+        to:savesj
+      }
+      // console.log(mydata)
+      wepy.request({
+        url: 'https://dywsweb.com/msg_send',
+        data: mydata,
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function (res) {
+          wepy.showToast({
+            title: '发送成功',
+            duration: 1000
+          })
+          console.log(res)
+        }
+        })
+      }
+      },
+      lostsjfocus(){
+        this.sjFocus = false
+      },
+      lostccfocus(){
+        this.ccFocus = false
+      },
+      lostbccfocus(){
+        this.bccFocus = false
+      },
+      changeSjFocus(){
+        this.sjFocus = true
+      },
+      changeCcFocus(){
+        this.ccFocus = true
+      },
+      changeBccFocus(){
+        this.bccFocus = true
+      },
+      userMethods(email,key){
+        let self = this
+        var username;
+        self.UserList.user.forEach((item)=>{
+          if(email==item.email){
+            username = item.username
+          }
+        })
+        if(key=='sj'){
+          self.hasSjUsercheck = true
+          self.sjArr.forEach((item)=>{
+            if(email==item.email){
+              item.sjCheck = true
+              self.sjcuname = item.username
+              self.sjcuemail = item.email
+            }else{
+              item.sjCheck = false
+            }
+          }) 
+        }else if(key=='cc'){
+          self.hasCcUsercheck = true
+          self.ccArr.forEach((item)=>{
+            if(email==item.email){
+              item.ccCheck = true
+              self.cccuname = item.username
+              self.cccuemail = item.email
+            }else{
+              item.ccCheck = false
+            }
+          }) 
+        }else if(key=='bcc'){
+          self.hasBccUsercheck = true
+          self.bccArr.forEach((item)=>{
+            if(email==item.email){
+              item.bccCheck = true
+              self.bcccuname = item.username
+              self.bcccuemail = item.email
+            }else{
+              item.bccCheck = false
+            }
+          }) 
+        }
+      },
+      pickArr(e){
+        let self = this 
+        let sy = e.detail.value
+        let username = self.UserList.user[sy].username
+        let keyword = e.currentTarget.dataset.keyword
+        let haspeople = false
+        if(sy>0){
+          if(keyword=='sj'){
+            let putemail = self.UserList.user[sy].email     
+            if(self.sjArr.length>0){
+              self.sjArr.forEach((item)=>{
+                if(item.email==putemail){
+                  haspeople = true
+                  wepy.showToast({
+                    title: '已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration: 1000
+                  })
+                }
+              })
+              if(haspeople){
+
+              }else{
+                self.sjArr.push(self.UserList.user[sy])
+              }
+            }else{
+              self.sjArr.push(self.UserList.user[sy])
+            }       
+          }else if(keyword=='cc'){
+            let putemail = self.UserList.user[sy].email     
+            if(self.ccArr.length>0){
+              self.ccArr.forEach((item)=>{
+                if(item.email==putemail){
+                  haspeople = true
+                  wepy.showToast({
+                    title: '已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration: 1000
+                  })
+                }
+              })
+              if(haspeople){
+
+              }else{
+                self.ccArr.push(self.UserList.user[sy])
+              }
+            }else{
+              self.ccArr.push(self.UserList.user[sy])
+            }     
+          }else if(keyword=='bcc'){
+            let putemail = self.UserList.user[sy].email     
+            if(self.bccArr.length>0){
+              self.bccArr.forEach((item)=>{
+                if(item.email==putemail){
+                  haspeople = true
+                  wepy.showToast({
+                    title: '已存在用户',
+                    image:'../assets/w_cha.png',
+                    duration: 1000
+                  })
+                }
+              })
+              if(haspeople){
+
+              }else{
+                self.bccArr.push(self.UserList.user[sy])
+              }
+            }else{
+              self.bccArr.push(self.UserList.user[sy])
+            }     
+          } 
+        }else{
+          wepy.showToast({
+            title: '请选择用户',
+            image:'../assets/w_cha.png',
+            duration: 1000
+          })
+        }
+        
+      },
+      putinArr(e){
+        let self = this
+        let inputvalue = e.detail.value
+        let putemail;
+        let key = e.currentTarget.dataset.keyword
+        let patt = /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
+        if(key=='sj'){
+          self.sjUserInput = e.detail.value
+        }else if(key=='cc'){
+          self.ccUserInput = e.detail.value
+        }else{
+          self.bccUserInput = e.detail.value
+        }
+        if(inputvalue.indexOf(';')>0){
+          if(patt.test(inputvalue.substr(0,inputvalue.length-1))){
+            let checkemail = inputvalue.substr(0,inputvalue.length-1)
+            let hasemail = false
+            let arrhasemail = false
+            let newemail = {
+              username:'',
+              email:'',
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false
+            }
+            self.UserList.user.forEach((item)=>{
+              if(checkemail==item.email){
+                newemail.username = item.username;
+                newemail.email = item.email
+                hasemail = true
+              }
+            })
+             if(key=='sj'){
+                 if(hasemail){
+                  let arrhasemail = false
+                  self.sjArr.forEach((item)=>{
+                    if(newemail.email==item.email){
+                      arrhasemail = true
+                    }
+                  })
+                  if(arrhasemail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.sjUserInput = null
+                  }else{
+                    self.sjArr.push(newemail)
+                    self.sjUserInput = null
+                  }
+                 }else{
+                  let hasarremail = false
+                  let umuban = {
+                    username:inputvalue.substr(0,inputvalue.length-1),
+                    email:inputvalue.substr(0,inputvalue.length-1),
+                    sjCheck:false,
+                    ccCheck:false,
+                    bccCheck:false
+                  }
+                  self.sjArr.forEach((item)=>{
+                    if(umuban.email==item.email){
+                      hasarremail = true
+                    }
+                  })
+                  if(hasarremail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.sjUserInput = null
+                  }else{
+                    self.sjArr.push(umuban)
+                    self.sjUserInput = null
+                  }
+                 }
+             }else if(key=='cc'){
+                if(hasemail){
+                 let arrhasemail = false
+                  self.ccArr.forEach((item)=>{
+                    if(newemail.email==item.email){
+                      arrhasemail = true
+                    }
+                  })
+                  if(arrhasemail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.ccUserInput = null
+                  }else{
+                    self.ccArr.push(newemail)
+                  }
+                }else{
+                 let umuban = {
+                    username:inputvalue.substr(0,inputvalue.length-1),
+                    email:inputvalue.substr(0,inputvalue.length-1),
+                    sjCheck:false,
+                    ccCheck:false,
+                    bccCheck:false
+                  }
+                  let hasarremail = false
+                  self.ccArr.forEach((item)=>{
+                    if(umuban.email==item.email){
+                      hasarremail = true
+                    }
+                  })
+                  if(hasarremail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.ccUserInput = null
+                  }else{
+                    self.ccArr.push(umuban)
+                    self.ccUserInput = null
+                  }
+                }
+             }else{
+                if(hasemail){
+                 let arrhasemail = false
+                  self.bccArr.forEach((item)=>{
+                    if(newemail.email==item.email){
+                      arrhasemail = true
+                    }
+                  })
+                  if(arrhasemail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.bccUserInput = null
+                  }else{
+                    self.bccArr.push(newemail)
+                  }
+                }else{
+                 let umuban = {
+                    username:inputvalue.substr(0,inputvalue.length-1),
+                    email:inputvalue.substr(0,inputvalue.length-1),
+                    sjCheck:false,
+                    ccCheck:false,
+                    bccCheck:false
+                  }
+                  let hasarremail = false
+                  self.bccArr.forEach((item)=>{
+                    if(umuban.email==item.email){
+                      hasarremail = true
+                    }
+                  })
+                  if(hasarremail){
+                    wepy.showToast({
+                      title: '已经存在用户',
+                      image:'../assets/w_cha.png',
+                      duration: 1000
+                    })
+                    self.bccUserInput = null
+                  }else{
+                    self.bccArr.push(umuban)
+                    self.bccUserInput = null
+                  }
+                }
+             }
+          }else{
+            putemail = inputvalue.substr(0,inputvalue.length-1)
+            wepy.showToast({
+              title: '请输入正确邮箱地址',
+              image:'../assets/w_cha.png',
+              duration: 1000
+            })
+            if(key=='sj'){
+              self.sjUserInput = putemail
+            }else if(key=='cc'){
+              self.ccUserInput = putemail
+            }else if(key=='bcc'){
+              self.bccUserInput = putemail
+            }
+          }
+        }
+       
+      },
+      cancelCheck(key){
+        let self = this
+        if(key=='sj'){
+          self.hasSjUsercheck = false
+          self.sjArr.forEach((item)=>{
+            item.sjCheck = false
+          })
+        }else if(key=='cc'){
+          self.hasCcUsercheck = false
+          self.ccArr.forEach((item)=>{
+            item.ccCheck = false
+          })
+        }else if(key=='bcc'){
+          self.hasBccUsercheck = false
+          self.bccArr.forEach((item)=>{
+            item.bccCheck = false
+          })
+        }
+      },
+      delcu(email,key){
+        let self = this
+        if(key=='sj'){
+          self.sjArr.forEach((item,index)=>{
+            if(email==item.email){
+              item.sjCheck = false
+              self.sjArr.splice(index,1)
+            }
+          })
+          self.hasSjUsercheck = false
+        }else if(key=='cc'){
+          self.ccArr.forEach((item,index)=>{
+            if(email==item.email){
+              item.ccCheck = false
+              self.ccArr.splice(index,1)
+            }
+          })
+          self.hasCcUsercheck = false
+        }else if(key=='bcc'){
+          self.bccArr.forEach((item,index)=>{
+            if(email==item.email){
+              item.bccCheck = false
+              self.bccArr.splice(index,1)
+            }
+          })
+          self.hasBccUsercheck = false
+        }
+      },
+      changeSubject(e){
+        let self = this 
+        self.subject  = e.detail.value
+      },
+      changeTextarea(e){
+        let self = this
+        self.textTheme  = e.detail.value
+      }
+    }
+
+    onShow() {
+     var self = this
+     self.sjArr = [];
+     self.textTheme = '';
+     self.gettextTheme = '';
+     self.subject = '';
+     wepy.request({
+        url: 'https://dywsweb.com/getuserlist',
+        data: {
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: 'POST',
+        success: function (res) {
+          var arr = [];
+          var farr = [].concat(res.data.persons.fields);
+          var allmuban={
+            name:'所有成员',
+            check:true,
+            user:[]
+          }
+          farr.forEach((item,index)=>{
+            var allusermuban={
+              username:item[0],
+              email:item[1],
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false,
+            }
+            
+            allmuban.user.push(allusermuban)
+          })
+          var alls = {
+              username:'请选择',
+              email:'请选择',
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false,
+            }
+          allmuban.user.unshift(alls)
+          self.UserList = allmuban
+          self.$apply()
+        }
+     })
+     var options = wepy.getStorageSync('options')
+     if(options!==''){
+      options = JSON.parse(wepy.getStorageSync('options'))
+      if(options.opr==''){
+        self.sjArr = options.people
+      }else{
+        self.sjArr = options.people
+        wepy.showLoading({
+          title: '加载中',
+        })
+        if(options.opr=="reply_all"){
+          let mydata = {
+            folder_id:options.folder_id,
+            msg_id:options.msg_id,
+            opr:options.opr
+          }
+           wepy.request({
+            url: 'https://dywsweb.com/initmail',
+            data: mydata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            success: function (res) {
+              self.subject = "回复:"+res.data.subject
+              let infohead = "---原始邮件--- \n"
+              let sendtor = "发件人:"+"\""+res.data.from+"\""+"<"+res.data.from+">\n"
+              let stime = res.data.schedule
+              let sendtime = "发送时间:"+stime+'\n'
+              let recipients = "收件人:";
+              res.data.to.forEach((item)=>{
+                recipients += "\""+item.name+"\""+"<"+item.email+">"+";"
+              })
+              recipients += '\n'
+              let subject = "主题:"+res.data.subject+'\n'+'\n'
+              let text = res.data.text.body;
+              let str = '\n \n \n \n \n'+infohead+sendtor+sendtime+recipients+subject+text
+              self.gettextTheme = str
+              self.composeId = res.data.compose_id
+              self.$apply()
+              wepy.hideLoading()
+            }
+          })
+        }else{
+          wepy.showLoading({
+            title: '加载中',
+          })
+          let mydata = {
+            folder_id:options.folder_id,
+            msg_id:options.msg_id,
+            opr:options.opr
+          }
+          wepy.request({
+            url: 'https://dywsweb.com/initmail',
+            data: mydata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            success: function (res) {
+              self.subject = "转发:"+res.data.subject
+              let infohead = "---原始邮件--- \n"
+              let sendtor = "发件人:"+"\""+res.data.from+"\""+"<"+res.data.from+">\n"
+              let stime = res.data.schedule
+              let sendtime = "发送时间:"+stime+'\n'
+              let recipients = "收件人:";
+              res.data.to.forEach((item)=>{
+                recipients += "\""+item.name+"\""+"<"+item.email+">"+";"
+              })
+              recipients += '\n'
+              let subject = "主题:"+res.data.subject+'\n'+'\n'
+              let text = res.data.text.body;
+              let str = '\n \n \n \n \n'+infohead+sendtor+sendtime+recipients+subject+text
+              self.gettextTheme = str
+              self.composeId = res.data.compose_id
+              self.$apply()
+              wepy.hideLoading()
+            }
+          })
+        }
+      }
+     }else{
+      options = {
+        folder_id:'',
+        msg_id:'',
+        opr:''
+      }
+      let mydata = {
+        folder_id:options.folder_id,
+        msg_id:options.msg_id,
+        opr:options.opr
+      }
+      wepy.request({
+            url: 'https://dywsweb.com/initmail',
+            data: mydata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            method: 'POST',
+            success: function (res) {
+              self.composeId = res.data.compose_id
+            }
+          })
+     }
+     
+    }
+  }
+</script>

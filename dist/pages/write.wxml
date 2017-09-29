@@ -1,0 +1,85 @@
+
+  <view class="writehead">
+    <button class="defaultbtn savebtn" bindtap="saveMail">保存</button>
+    <button class="defaultbtn sendbtn" bindtap="sendMail">发送</button>
+  </view>
+  <view class="theme">
+    <view class="themeItem sj">
+      <view class="themeItemleft">收件人:</view>
+      <view class="themeItemmid" bindtap="changeSjFocus">
+          <view  wx:key="{{index}}" wx:for="{{sjArr}}">
+            <view class="mailname {{item.sjCheck ? 'itemCheck' : ''}}"  catchtap="userMethods" data-wepy-params-a="{{item.email}}" data-wepy-params-b="sj">{{item.username}}</view>
+          </view>
+          <input type="text" class="putUserInput" bindblur="lostsjfocus" data-keyword="sj" focus="{{sjFocus}}" bindinput="putinArr" value="{{sjUserInput}}"/>
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="sj" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image src="../assets/b_add.png" class="adduserbtn" alt=""/>
+        </picker>
+      </view>
+      
+    </view>
+    <view class="themeItem sj"  wx:if="{{hasSjUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{sjcuname}}</view>
+          <view class="checkEmail">{{sjcuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck" data-wepy-params-a="sj">取消</button>
+        <button class="writeBtn" bindtap="delcu" data-wepy-params-a="{{sjcuemail}}" data-wepy-params-b="sj">删除</button>
+      </view>
+    <view class="themeItem cc">
+      <view class="themeItemleft">抄送:</view>
+      <view class="themeItemmid" bindtap="changeCcFocus">
+          <view wx:key="{{index}}" wx:for="{{ccArr}}">
+            <view class="mailname {{item.ccCheck ? 'itemCheck' : ''}}" catchtap="userMethods" data-wepy-params-a="{{item.email}}" data-wepy-params-b="cc">{{item.username}}</view>
+          </view>
+          <input type="text" value="{{ccUserInput}}" class="putUserInput" bindblur="lostccfocus" focus="{{ccFocus}}" bindinput="putinArr" data-keyword="cc"/>
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="cc" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image src="../assets/b_add.png" class="adduserbtn" alt=""/>
+        </picker>
+      </view>
+    </view>
+    <view class="themeItem cc" wx:if="{{hasCcUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{cccuname}}</view>
+          <view class="checkEmail">{{cccuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck" data-wepy-params-a="cc">取消</button>
+        <button class="writeBtn" bindtap="delcu" data-wepy-params-a="{{cccuemail}}" data-wepy-params-b="cc">删除</button>
+      </view>
+    <view class="themeItem bcc">
+      <view class="themeItemleft">密送:</view>
+      <view class="themeItemmid" bindtap="changeBccFocus">
+          <view wx:key="{{index}}" wx:for="{{bccArr}}">
+            <view class="mailname {{item.bccCheck ? 'itemCheck' : ''}}" catchtap="userMethods" data-wepy-params-a="{{item.email}}" data-wepy-params-b="bcc">{{item.username}}</view>
+          </view>
+          <input type="text" value="{{bccUserInput}}" class="putUserInput" bindblur="lostbccfocus" focus="{{bccFocus}}" bindinput="putinArr" data-keyword="bcc"/>
+        </view>
+      <view class="themeItemright">
+      <picker data-keyword="bcc" bindchange="pickArr" value="{{index}}" range-key="username" range="{{UserList.user}}">
+        <image src="../assets/b_add.png" class="adduserbtn" alt=""/>
+        </picker>
+      </view>
+    </view>
+    <view class="themeItem bcc" wx:if="{{hasBccUsercheck}}">
+        <view class="usercheck">
+          <view class="checkUsername">{{bcccuname}}</view>
+          <view class="checkEmail">{{bcccuemail}}</view>
+          </view>
+        <button class="writeBtn" bindtap="cancelCheck" data-wepy-params-a="bcc">取消</button>
+        <button class="writeBtn" bindtap="delcu" data-wepy-params-a="{{bcccuemail}}" data-wepy-params-b="bcc">删除</button>
+      </view>
+      <view class="themeItem">
+        <view class="themeItemleft">
+          主题:
+        </view>
+        <input type="text" class="subject" bindinput="changeSubject" value="{{subject}}"/>
+      </view>
+      <textarea class="textTheme" maxlength="5000" bindinput="changeTextarea" placeholder-class="placeholder" placeholder="请输入邮件内容..." value="{{gettextTheme}}"/>
+     
+  </view>
+   <view class="uploaddiv">
+    <view class="uploadimg" bindtap="oploadfile">上传文件</view> 
+   </view>

@@ -1,0 +1,33 @@
+
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png" alt=""/>
+      <view class="searchdiv">
+        <image src="../assets/search.png" class="searchpic" alt="" bindtap="finduser"/>
+        <input type="text" class="searchInput" bindinput="getsearchInput"/>
+      </view>
+    </view>
+    <view class="grouptitle">群组:</view>
+    <view class="grouplist"  wx:for="{{Grouplist}}" wx:key="index" data-name="{{item.name}}" data-index="{{index}}" bindtap="getuserlist">
+      <view class="groupname">{{item.name}}</view>
+      <image wx:if="{{!item.check}}" src="../assets/h_right.png" class="j_right"/>
+      <image wx:if="{{item.check}}" src="../assets/h_down.png" class="j_right"/>
+      <view class="reddot">{{item.user.length}}</view>
+    </view>
+    <view class="grouptitle">{{grouptitle}}:</view>
+    <view  wx:for="{{showUserInfo}}" wx:key="index">
+        <view class="userlist {{item.check ? 's_userlist' : ''}}" >
+          <view class="kgdiv">
+            <view class="checkeritem {{item.check ? 'demo1-item-selected' : ''}}" data-index="{{index}}" catchtap="changeCheck"/>
+          </view>
+          <view class="usertheme">
+            <view class="username">{{item.username}}</view>
+            <view class="email">{{item.email}}</view>
+          </view> 
+        </view>
+      </view>
+    <view class="footer">
+        <view class="allSelect {{allselect ? 'check' : ''}}"  bindtap="AllSelect"/>
+        <view class="s_length {{existUser ? 'hide' : ''}}">已选中{{UserLength}}人</view>
+        <image src="../assets/h_close.png" class="closebtn {{!clearSelect ? 'hide' : ''}}" bindtap="clear" alt=""/>
+        <button class="defaultbtn" bindtap="writeLetter">写邮件</button>
+      </view>

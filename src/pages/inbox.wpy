@@ -1,0 +1,161 @@
+<style>
+  .header{
+    width:100%;
+    height: 40px;
+    border-bottom:1px solid #dadada;
+    position:relative;
+    text-align:center;
+  }
+  .inboxlogo{
+    float:left;
+    margin-top:11px;
+    height: 23px; 
+    width: 103px;
+    margin-left:15px;
+  }
+  .welcomeuser{
+    color:#000;
+    height: 30px;
+    font-size:14px;
+    line-height:30px;
+    width:100%;
+    float:left;
+    padding:0 15px;
+    box-sizing:border-box;
+    border-bottom:1px solid #dadada;
+  }
+  .refresh{
+    float:right;
+    width:24px;
+    height: 24px;
+    margin-top:8px;
+    margin-right:15px;
+  }
+.weui-cells {
+  margin-top:30px !important;
+}
+.listdiv{
+  border-bottom:1px solid #dadada;
+}
+.inboxlist{
+  height: 40px;
+  float: left;
+  width:100%;
+  border-bottom:1px solid #dadada;
+}
+.inboxname{
+  height: 40px;
+  line-height:40px;
+  float:left;
+  margin-left: 15px;
+  color:#000;
+  font-size:14px;
+}
+.reddot{
+  float:right;
+  margin-right:10px;
+  height: 20px;
+  margin-top:10px;
+  width:auto;
+  padding:0 6px;
+  font-size:12px;
+  color:white;
+  background-color: red;
+  line-height:20px;
+  border-radius:50%;
+}
+.j_right{
+  width:16px;
+  height: 16px;
+  margin-top:12px;
+  margin-right: 15px;
+  float:right;
+}
+
+</style>
+<template>
+  <view class="header" >
+      <image src="../assets/mylogo.png" class="inboxlogo">
+    <view bindtap="refresh"> 
+      <image  class="refresh" src="../assets/refresh.png" alt=""> 
+    </view>  
+  </view>
+  <view class="welcomeuser">您好,{{username}}</view>
+    <view class="inboxlist" wx:for="{{folders}}" wx:key="index" data-name="{{item.name}}" data-id="{{item.id}}" bindtap="getmaillist">
+      <span class="inboxname">{{item.name}}</span>
+      <image src="../assets/h_right.png" class="j_right">
+      <span class="reddot">{{item.data.count_total}}</span>
+    </view>
+  
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class inbox extends wepy.page {
+    config = {
+      navigationBarTitleText: 'ExtMail'
+    }
+    components = {
+
+    }
+
+    data = {
+     username:'',
+     folders:''
+    }
+
+    computed = {
+
+    }
+
+    methods = {
+      refresh(){
+        let self = this
+        wepy.request({
+           url: 'https://dywsweb.com/getfolders',
+           data: {
+           },
+           header: {
+             'content-type': 'application/x-www-form-urlencoded'
+           },
+           method: 'POST',
+           success: function (res) {
+
+             self.folders = res.data
+           }
+         });
+      },
+      getmaillist(e){
+        let self = this
+        wx.navigateTo({
+          url: "/pages/maillist?category=folder&folderid="+e.currentTarget.dataset.id+"&page=1&perpage=10&sort=time_desc&foldername="+e.currentTarget.dataset.name
+        })
+      }
+    }
+    onShow(){
+      let self = this
+      wepy.removeStorageSync('options')
+      self.username = wepy.getStorageSync("username")
+      wepy.showLoading({
+        title: '加载中',
+      })
+      
+      wepy.request({
+           url: 'https://dywsweb.com/getfolders',
+           data: {
+           },
+           header: {
+             'content-type': 'application/x-www-form-urlencoded'
+           },
+           method: 'POST',
+           success: function (res) {
+
+             self.folders = res.data
+             self.$apply()
+             wx.hideLoading()
+           }
+         });
+    }
+  }
+</script>

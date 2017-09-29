@@ -1,0 +1,516 @@
+<style>
+@import "../wxParse/wxParse.wxss";
+.header{
+    width:100%;
+    height: 40px;
+    border-bottom:1px solid #dadada;
+    position:relative;
+    text-align:center;
+  }
+  .inboxlogo{
+    float:left;
+    margin-top:11px;
+    height: 23px; 
+    width: 103px;
+    margin-left:15px;
+  }
+.backbtn{
+  width:30px;
+  height:30px;
+  float:left;
+  margin-top:15px;
+}
+.shanchubtn{
+  width:26px;
+  height:26px;
+  float:right;
+  margin-top:17px;
+  margin-right:20px;
+}
+.relaybtn{
+  width:26px;
+  height:26px;
+  float:right;
+  margin-top:17px;
+  margin-right:20px;
+}
+.slhbtn{
+  width:30px;
+  height:30px;
+  float:right;
+  margin-top:15px;
+  margin-right:20px;
+}
+.header>img{
+   
+    height: 25px;
+}
+.headmethods{
+  width:100%;
+  height: 60px;
+  float:left;
+  border-bottom:1px solid #dadada;
+  padding:0 10px;
+  box-sizing:border-box;
+}
+.detail{
+    height:auto;
+    width:100%;
+    float:left;
+    padding:0 15px;
+    box-sizing:border-box;
+    background-color: white;
+    border-bottom:1px solid #dadada;
+}
+.title{
+    margin-top:10px;
+    color:#000;
+    font-size:16px;
+    float:left;
+    width:100%;
+    font-weight:600;
+}
+.sendpeople{
+    color:#0089ce;
+    font-weight:600;
+    float:left;
+    margin-top:10px;
+    font-size:14px;
+}
+.simple{
+    width:100%;
+    height:auto;
+
+}
+.nosimple{
+    width:100%;
+    height:auto;
+}
+.sendtordiv{
+    width:100%;
+    float:left;
+    margin-top:10px;
+}
+.note{
+    float:left;
+    width:20%;
+    height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+.sendtordiv{
+    float:left;
+    width:100%;
+    position:relative;
+}
+.getdiv{
+    float:left;
+    width:100%;
+}
+.timediv{
+    float:left;
+    width:100%;
+}
+.ccdiv{
+    float:left;
+    width:100%;
+}
+.info{
+    float:left;
+    width:72%;
+    word-break:break-all;
+}
+.name{
+    float:left;
+    width:auto;
+    font-size:14px;
+}
+.address{
+    float:left;
+    width:auto;
+    color:#a0a8c0;
+    font-size:12px;
+    margin-top:2px;
+    
+}
+.time{
+    color:#a0a8c0;
+    float:right;
+    font-size:12px;
+    margin-top:12px;
+    margin-right: 5px;
+}
+.d_time{
+    color:#a0a8c0;
+    float:left;
+    font-size:12px;
+    margin-top:2px;
+}
+.fordetail{
+    color:#0089ce;
+    float:right;
+    margin-top:10px;
+    font-size:14px;
+    cursor:pointer;
+}
+.forsimple{
+    color:#0089ce;
+    font-size:14px;
+    cursor:pointer;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.theme{
+    box-sizing:border-box;
+    padding:0 15px;
+    border-bottom:1px solid #dadada;
+    float:left;
+    width:100%;
+}
+.textdiv{
+    background-color: #f2f2f2;
+    height:180px;
+    width:100%;
+    box-sizing:border-box;
+    padding:0 15px;
+    float:left;
+    margin-top:50px;
+}
+.content{
+    resize:none;
+    width:100%;
+    height:60px;
+    margin-top:50px;
+    float:left;
+    border-radius:7px;
+    outline:none;
+    padding:15px 15px;
+    box-sizing:border-box;
+    font-size:14px;
+} 
+.reply{
+    background-color: #0089ce;
+    border-radius:7px;
+    width:50px;
+    height: 30px;
+    color:white;
+    line-height:30px;
+    border:1px solid #0089ce;
+    float:right;
+    margin-top:15px;
+    margin-right: 10px;
+    font-size:12px;
+    text-align:center;
+    cursor:pointer;
+    outline:none;
+}
+.footfont{
+    text-align:center;
+    color:#a0a8c0;
+    float:left;
+    width:100%;
+    font-size:12px;
+    margin-top:20px;
+}
+.logo{
+    margin-top:5px;
+}
+.hide{
+  display:none;
+}
+.blank{
+  width:100%;
+  float:left;
+  height: 100px;
+}
+</style>
+<template>
+<import src="../wxParse/wxParse.wxml"/>
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png"  alt="">
+  </view>
+  <view class="headmethods">
+      <image src="../assets/b_left.png" class="backbtn" alt="" bindtap="back"/>
+       <picker bindchange="selaction" value="{{index}}" range-key="name" range="{{action}}">
+      <image src="../assets/b_slh.png" class="slhbtn" alt=""/>
+      </picker>
+      <picker bindchange="moveMail" value="{{index}}" range-key="name" range="{{folders}}">
+        <image src="../assets/b_move.png" class="shanchubtn"/>
+      </picker>
+      <image src="../assets/b_reply.png" class="relaybtn" alt="" bindtap="relayMail"/>
+  </view>
+  <view class="detail">
+        <view class="title">{{MailInfo.msg.subject}}</view>
+        <view class="simple" :class="{'hide':isShowDetail}">
+            <view class="sendpeople">{{MailInfo.msg.from.name}}</view>
+            <view class="fordetail" bindtap="showDetail">详情</view>
+            <view class="time">{{MailInfo.msg.date_sent}}</view> 
+        </view>
+         <view class="nosimple" :class="{'hide':!isShowDetail}">
+            <view class="sendtordiv">
+                <view class="note">发件人</view>
+                <view class="info">
+                    <view class="name" ><view style="float:left;">{{MailInfo.msg.from.name}}</view><view class="address">{{char_lt+MailInfo.msg.from.email+char_gt}}</view></view>
+                          
+                    <view class="forsimple" bindtap="showDetail">隐藏</view>          
+                </view>
+            </view>
+            <view class="getdiv">
+                <view class="note">收件人</view>
+                <view class="info" >
+                  <view wx:for="{{MailInfo.msg.to}}" wx:key="index">
+                    <view class="name"><view style="float:left">{{item.name}}</view> <view class="address">{{char_lt+item.email+char_gt}}</view></view>
+                  </view>
+                </view>
+            </view>
+            <view class="ccdiv">
+                <view class="note">抄送</view>
+                <view class="info">
+                  <view wx:for="{{MailInfo.msg.cc}}" wx:key="index">
+                    <view class="name"><view style="float:left">{{item.name}}</view><view class="address">{{char_lt+item.email+char_gt}}</view></view>
+                  </view>
+                </view>
+            </view>
+            <view class="timediv">
+                <view class="note">时间</view>
+                <view class="info">
+                   <view class="d_time">{{MailInfo.msg.date_sent}}</view>
+                </view>
+            </view>
+            
+        </view> 
+  </view>
+  <view class="theme">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  var WxParse = require('../wxParse/wxParse.js');
+  export default class mailinfo extends wepy.page {
+    config = {
+      navigationBarTitleText: 'ExtMail'
+    }
+    components = {
+
+    }
+
+    data = {
+     isShowDetail:false,
+     MailInfo:'',
+     innerHTML:'',
+     char_lt:"<",
+     char_gt:">",
+     action:[{id:0,name:'回复'},{id:1,name:'转发'},{id:2,name:'删除'},{id:3,name:'标为未读'}],
+     folders:'',
+     folderid:'',
+     msgid:''
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+      wxParseImgLoad (){
+        console.log('hello vue')
+      },
+      back(){
+        wepy.navigateBack({
+          delta: 1
+        })
+      },
+      relayMail(){
+        let self = this
+        let option = {
+            people:[
+              {
+                username:self.MailInfo.msg.from.name,
+                email:self.MailInfo.msg.from.email,
+                sjCheck:false,
+                ccCheck:false,
+                bccCheck:false,
+              },
+            ],
+            opr:'reply_all',
+            folder_id:self.folderid,
+            msg_id:self.msgid
+          }
+          let options = JSON.stringify(option)
+          wepy.setStorageSync('options',options)
+          wepy.switchTab({
+            url: '/pages/write'
+          })
+      },
+      showDetail(){
+        this.isShowDetail = !this.isShowDetail
+      },
+      selaction(e){
+        let self = this
+        let sy = e.detail.value 
+        if(sy==0){
+          let option = {
+            people:[
+              {
+                username:self.MailInfo.msg.from.name,
+                email:self.MailInfo.msg.from.email,
+                sjCheck:false,
+                ccCheck:false,
+                bccCheck:false,
+              },
+            ],
+            opr:'reply_all',
+            folder_id:self.folderid,
+            msg_id:self.msgid
+          }
+          let options = JSON.stringify(option)
+          wepy.setStorageSync('options',options)
+          wepy.switchTab({
+            url: '/pages/write'
+          })
+        }else if(sy==1){
+           let option = {
+            people:[
+              {
+                username:self.MailInfo.msg.from.name,
+                email:self.MailInfo.msg.from.email,
+                sjCheck:false,
+                ccCheck:false,
+                bccCheck:false,
+              },
+            ],
+            opr:'forward_attach',
+            folder_id:self.folderid,
+            msg_id:self.msgid
+          }
+          let options = JSON.stringify(option)
+          wepy.setStorageSync('options',options)
+          wepy.switchTab({
+            url: '/pages/write'
+          })
+        }else if(sy==2){
+          let mydata = {
+            msg:{
+                 folder_id:self.folderid,
+                 msg_id:self.msgid,
+               }
+          }
+          wepy.request({
+              url: 'https://dywsweb.com/msg_delete_actual',
+              data: mydata,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'POST',
+              success: function (res) {
+               if(res.data=='success'){
+                wepy.showToast({
+                  title: '删除成功',
+                  duration: 1000
+                })
+               }
+              }
+            });
+        }else{
+          let mydata = {
+            msg:{
+                 folder_id:self.folderid,
+                 msg_id:self.msgid,
+               },
+            read:false
+          }
+          wepy.request({
+              url: 'https://dywsweb.com/set_read',
+              data: mydata,
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'POST',
+              success: function (res) {
+               if(res.data=='success'){
+                wepy.showToast({
+                  title: '设置未读成功',
+                  duration: 1000
+                })
+               }
+              }
+            });
+        }
+      },
+      moveMail(e){
+        let self = this
+        let sy = e.detail.value 
+        let ftd = self.folders[sy].id 
+        let mvdata = {
+          folder_id_target:ftd,
+            msg:{
+              folder_id:self.folderid,
+              msg_id:self.msgid,
+            }
+        }      
+        wepy.request({
+           url: 'https://dywsweb.com/msg_move',
+           data: mvdata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+           method: 'POST',
+           success: function (res) {
+             if(res.data=='success'){
+                wepy.showToast({
+                  title: '操作成功',
+                  duration: 1000
+                })
+               }
+           }
+         });
+      }
+    }
+
+    onLoad(options) {
+      let self = this
+      let folderid = options.folderid;
+      self.folderid = folderid
+      let msgid = options.msgid;
+      self.msgid =  msgid
+      let mydata = {
+        folderid:folderid,
+        msgid:msgid,
+      }
+      wepy.showLoading({
+         title: '加载中',
+       })
+      wepy.request({
+           url: 'https://dywsweb.com/getmailinfo',
+           data: mydata,
+            header: {
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+           method: 'POST',
+           success: function (res) {
+            self.MailInfo = res.data 
+            let article = res.data.html.body
+            WxParse.wxParse('article', 'html', article, self, 0);
+            self.$apply() 
+            wepy.hideLoading()
+           }
+         });
+      wepy.request({
+           url: 'https://dywsweb.com/getfolders',
+           data: {
+           },
+           header: {
+             'content-type': 'application/json'
+           },
+           method: 'POST',
+           success: function (res) {
+            self.folders = res.data
+            self.$apply()
+           }
+         });
+  }
+}
+</script>
+

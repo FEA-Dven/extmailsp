@@ -1,0 +1,59 @@
+
+<import src="../wxParse/wxParse.wxml"/>
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png" alt=""/>
+  </view>
+  <view class="headmethods">
+      <image src="../assets/b_left.png" class="backbtn" alt="" bindtap="back"/>
+       <picker bindchange="selaction" value="{{index}}" range-key="name" range="{{action}}">
+      <image src="../assets/b_slh.png" class="slhbtn" alt=""/>
+      </picker>
+      <picker bindchange="moveMail" value="{{index}}" range-key="name" range="{{folders}}">
+        <image src="../assets/b_move.png" class="shanchubtn"/>
+      </picker>
+      <image src="../assets/b_reply.png" class="relaybtn" alt="" bindtap="relayMail"/>
+  </view>
+  <view class="detail">
+        <view class="title">{{MailInfo.msg.subject}}</view>
+        <view class="simple {{isShowDetail ? 'hide' : ''}}" >
+            <view class="sendpeople">{{MailInfo.msg.from.name}}</view>
+            <view class="fordetail" bindtap="showDetail">详情</view>
+            <view class="time">{{MailInfo.msg.date_sent}}</view> 
+        </view>
+         <view class="nosimple {{!isShowDetail ? 'hide' : ''}}">
+            <view class="sendtordiv">
+                <view class="note">发件人</view>
+                <view class="info">
+                    <view class="name"><view style="float:left;">{{MailInfo.msg.from.name}}</view><view class="address">{{char_lt+MailInfo.msg.from.email+char_gt}}</view></view>
+                          
+                    <view class="forsimple" bindtap="showDetail">隐藏</view>          
+                </view>
+            </view>
+            <view class="getdiv">
+                <view class="note">收件人</view>
+                <view class="info">
+                  <view  wx:for="{{MailInfo.msg.to}}" wx:key="index">
+                    <view class="name"><view style="float:left">{{item.name}}</view> <view class="address">{{char_lt+item.email+char_gt}}</view></view>
+                  </view>
+                </view>
+            </view>
+            <view class="ccdiv">
+                <view class="note">抄送</view>
+                <view class="info">
+                  <view  wx:for="{{MailInfo.msg.cc}}" wx:key="index">
+                    <view class="name"><view style="float:left">{{item.name}}</view><view class="address">{{char_lt+item.email+char_gt}}</view></view>
+                  </view>
+                </view>
+            </view>
+            <view class="timediv">
+                <view class="note">时间</view>
+                <view class="info">
+                   <view class="d_time">{{MailInfo.msg.date_sent}}</view>
+                </view>
+            </view>
+            
+        </view> 
+  </view>
+  <view class="theme">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>

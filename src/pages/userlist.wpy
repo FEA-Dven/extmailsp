@@ -1,0 +1,561 @@
+<style>
+.header{
+    width:100%;
+    height: 40px;
+    border-bottom:1px solid #dadada;
+    position:relative;
+    text-align:center;
+  }
+  .inboxlogo{
+    float:left;
+    margin-top:11px;
+    height: 23px; 
+    width: 103px;
+    margin-left:15px;
+  }
+.searchdiv{
+  float:right;
+  margin-right:15px;
+  height: 40px;
+  box-sizing:border-box;
+  width:140px;
+}
+.searchpic{
+  width:18px;
+  height: 18px;
+  position:absolute;
+  right:18px;
+  top:50%;
+  margin-top:-9px;
+}
+.searchInput{
+  width:100%;
+  padding:0 25px;
+  box-sizing:border-box;
+  height: 24px;
+  border:1px solid #ccc;
+  border-radius:7px;
+  line-height:24px;
+  margin-top:8px;
+  outline:none;
+  font-size:14px;
+}
+.grouptitle{
+  width:100%;
+  height: 30px;
+  line-height:30px;
+  float:left;
+  color:#999;
+  font-size:14px;
+  padding: 0 15px;
+  box-sizing:border-box;
+  border-bottom:1px solid #dadada;
+}
+.grouplist{
+  height: 40px;
+  float: left;
+  width:100%;
+  border-bottom:1px solid #dadada;
+}
+.groupname{
+  height: 40px;
+  line-height:40px;
+  float:left;
+  margin-left: 15px;
+  color:#000;
+  font-size:14px;
+}
+.reddot{
+  float:right;
+  margin-right:10px;
+  height: 20px;
+  margin-top:10px;
+  width:auto;
+  padding:0 6px;
+  font-size:12px;
+  color:white;
+  background-color: red;
+  line-height:20px;
+  border-radius:50%;
+}
+.j_right{
+  width:16px;
+  height: 16px;
+  margin-top:12px;
+  margin-right: 15px;
+  float:right;
+}
+.checkeritem {
+  border: 1px solid #ccc;
+  width:16px;
+  height: 16px;
+  border-radius:50%;
+  margin-top:8px;
+  float:left;
+}
+.demo1-item-selected {
+  border: 1px solid #0089ce;
+  background-color: #0089ce;
+}
+.usertheme{
+  float:left;
+  height: 60px;
+  width:85%;
+  margin-left:1%;
+}
+.userlist{
+  width:100%;
+  height: 60px;
+  float:left;
+  border-bottom:1px solid #dadada;
+  background-color: white;
+}
+.s_userlist{
+  background-color: #ebf6ff;
+}
+.username{
+  float:left;
+   width:100%;
+  height: 25px;
+  line-height:25px;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  color:#000000;
+  font-size:14px;
+  margin-top:4px;
+}
+.email{
+  float:left;
+  width:100%;
+  height: 25px;
+  line-height:25px;
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size:14px;
+  color:#ccc;
+}
+.kgdiv{
+  width:10%;
+  margin-left:2%;
+  height:60px;
+  float:left;
+}
+.footer{
+  height: 40px;
+  width:100%;
+  background-color: #f2f2f2;
+  float:left;
+  border-bottom:1px solid #dadada;
+}
+.allSelect{
+  width:16px;
+  height: 16px;
+  margin-top:12px;
+  margin-left: 10px;
+  float:left;
+  border-radius:50%;
+  border:1px solid #ccc;
+  background-color: white;
+}
+.s_length{
+  width:auto;
+  height: 16px;
+  margin-top:12px;
+  margin-left: 10px;
+  float:left;
+  color:#000;
+  line-height:16px;
+  font-size:12px;
+}
+.check{
+  background-color: #0089ce;
+  border:1px solid #0089ce;
+}
+.hide{
+  display:none;
+}
+.defaultbtn{
+  width:auto;
+  height: 24px;
+  float:left;
+  border:1px solid #d5d5d5;
+  border-radius:6px;
+  background-color: white;
+  color:#000;
+  line-height:24px;
+  outline:none;
+  margin-top:8px;
+  margin-left:10px;
+  font-size:12px;
+  padding:0 8px;
+}
+.closebtn{
+  width:18px;
+  height: 18px;
+  float:left;
+  margin-top:11px;
+  margin-left: 5px;
+}
+.groupImg{
+  float:right;
+  width: 22px;
+  height: 22px;
+  margin-top:2px;
+  margin-left: 10px;
+}
+</style>
+<template>
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png"  alt="">
+      <view class="searchdiv">
+        <image src="../assets/search.png" class="searchpic" alt="" bindtap="finduser">
+        <input type="text" class="searchInput" bindinput="getsearchInput">
+      </view>
+    </view>
+    <view class="grouptitle">群组:</view>
+    <view class="grouplist" wx:for="{{Grouplist}}" wx:key="index" data-name="{{item.name}}" data-index="{{index}}" bindtap="getuserlist">
+      <view class="groupname">{{item.name}}</view>
+      <image wx:if="{{!item.check}}" src="../assets/h_right.png" class="j_right">
+      <image wx:if="{{item.check}}" src="../assets/h_down.png" class="j_right">
+      <view class="reddot">{{item.user.length}}</view>
+    </view>
+    <view class="grouptitle">{{grouptitle}}:</view>
+    <view wx:for="{{showUserInfo}}" wx:key="index">
+        <view class="userlist" :class="{'s_userlist':item.check}">
+          <view class="kgdiv">
+            <view class="checkeritem" data-index="{{index}}" catchtap="changeCheck" :class="{'demo1-item-selected':item.check}"></view>
+          </view>
+          <view class="usertheme">
+            <view class="username">{{item.username}}</view>
+            <view class="email">{{item.email}}</view>
+          </view> 
+        </view>
+      </view>
+    <view class="footer">
+        <view class="allSelect" :class="{'check':allselect}" bindtap="AllSelect"></view>
+        <view class="s_length" :class="{'hide':existUser}">已选中{{UserLength}}人</view>
+        <image src="../assets/h_close.png" class="closebtn" bindtap="clear" :class="{'hide':!clearSelect}" alt="">
+        <button class="defaultbtn" bindtap="writeLetter">写邮件</button>
+      </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class userlist extends wepy.page {
+    config = {
+      navigationBarTitleText: 'ExtMail'
+    }
+    components = {
+
+    }
+
+    data = {
+      findInput:'',
+      Grouplist:'',
+      OnlyOnceFind:false,
+      demo1:[],
+      allselect:false,
+    }
+
+    computed = {
+      showUserInfo(){
+        for(var i=0;i<this.Grouplist.length;i++){
+          if(this.Grouplist[i].check){
+            return this.Grouplist[i].user
+          }
+        }
+      },
+      grouptitle(){
+        for(var i=0;i<this.Grouplist.length;i++){
+          if(this.Grouplist[i].check){
+            return this.Grouplist[i].name
+          }
+        }
+      },
+      UserLength(){
+        return this.demo1.length
+      },
+      clearSelect(){
+        if(this.demo1.length>0){
+          return true
+        }else{
+          return false
+        }   
+      }
+    }
+
+    methods = {
+      clear(){
+        let self = this;
+        let keyIndex;
+        self.clearSelect = true;
+        self.allselect = false;
+        self.demo1.splice(0,self.demo1.length);
+        for(var i=0;i<this.Grouplist.length;i++){
+          if(this.Grouplist[i].check){
+            keyIndex = i
+          }
+        }
+        self.Grouplist[keyIndex].user.forEach((item)=>{
+          item.check = false
+        })
+      },
+      getsearchInput(e){
+        this.findInput = e.detail.value
+      },
+      finduser(){
+        var self = this
+        var findArr = []
+        var fmuban = {
+          check:true,
+          name:'查找成员',
+          user:[],
+
+        }
+        var username = self.findInput
+        var farr = [].concat(self.Grouplist[0].user);
+        farr.forEach((item)=>{
+          if(username==item.username||username==item.email){
+            var finduser = {
+              username:item.username,
+              email:item.email,
+              check:false,
+            }
+          fmuban.user.push(finduser)
+          }
+        })
+        self.demo1.splice(0,self.demo1.length)
+        self.allselect = false
+        if(fmuban.user.length!==0){
+          self.Grouplist.forEach((item)=>{
+          item.check = false;
+         })
+          if(self.OnlyOnceFind){
+            self.Grouplist.splice(self.Grouplist.length-1,1)
+            self.Grouplist.push(fmuban);
+          }else{
+            self.Grouplist.push(fmuban);
+            self.OnlyOnceFind = true
+          }
+        }else{
+           wepy.showToast({
+            title: '查无此成员',
+            image:'../assets/w_cha.png',
+            duration: 1000
+          })
+        }
+      },
+      getuserlist(e){
+        let self = this;
+        let sy = e.currentTarget.dataset.index
+        self.grouptitle = e.currentTarget.dataset.name
+        self.Grouplist.forEach((item)=>{
+          item.check = false
+        })
+        self.Grouplist[sy].check = true
+        self.demo1.splice(0,self.demo1.length)
+        self.allselect = false
+        self.Grouplist[sy].user.forEach((item)=>{
+          item.check = false
+        })
+      },
+      changeCheck(e){
+        let self = this
+        let sy = e.target.dataset.index   
+        let keyIndex;
+        for(var i=0;i<this.Grouplist.length;i++){
+          if(this.Grouplist[i].check){
+            keyIndex = i
+          }
+        }
+        if(self.showUserInfo[sy].check){
+          let dmail;  
+          self.showUserInfo.forEach((item,index)=>{
+            if(sy==index){   
+              dmail = item.email  
+            }
+          })
+          self.Grouplist[keyIndex].user.forEach((item)=>{
+              if(dmail==item.email){
+                item.check = false
+              }
+            })
+          self.demo1.forEach((item,index)=>{
+            if(dmail==item.email){
+              self.demo1.splice(index,1)
+            }
+          })
+        }else{  
+            let pemail;
+            self.showUserInfo.forEach((item,index)=>{
+              if(sy==index){   
+                pemail = item.email  
+              }
+            })
+            self.Grouplist[keyIndex].user.forEach((item)=>{
+              if(pemail==item.email){
+                item.check = true
+                self.demo1.push(item)
+              }
+            })
+          
+        }
+        if(self.demo1.length!==self.showUserInfo.length){
+          self.allselect = false
+        }else{
+          self.allselect = true
+        }
+      },
+      AllSelect(){
+        let self = this;
+        let keyIndex;
+        self.allselect = !self.allselect;
+        for(var i=0;i<this.Grouplist.length;i++){
+          if(this.Grouplist[i].check){
+            keyIndex = i
+          }
+        }
+        self.Grouplist[keyIndex].user.forEach((item)=>{
+          if(self.allselect==true){
+            if(item.check==false){
+              self.demo1.push(item);
+            }
+            item.check = true
+          }else{
+            item.check = false;
+            self.demo1.splice(0,self.demo1.length)
+          }
+        }) 
+      },
+      writeLetter(){
+        let self = this
+        if(self.demo1.length<1){
+          wepy.showToast({
+            title: '请选择成员',
+            image:'../assets/w_cha.png',
+            duration: 1000
+          })
+        }else{
+          let option = {
+            people:[],
+            opr:''
+          }
+          self.demo1.forEach((item)=>{
+            let umuban = {
+              username:item.username,
+              email:item.email,
+              sjCheck:false,
+              ccCheck:false,
+              bccCheck:false,
+            }
+            option.people.push(umuban)
+          })
+
+          let options = JSON.stringify(option)
+          wepy.setStorageSync('options',options)
+          wepy.switchTab({
+            url: '/pages/write'
+          })
+        }
+        
+      }
+    }
+
+    onShow() {
+      let self = this
+      wepy.showLoading({
+         title: '加载中',
+      })
+      wepy.removeStorageSync('options')
+      self.demo1 = [];
+      self.allselect = false
+        wepy.request({
+           url: 'https://dywsweb.com/getuserlist',
+           data: {
+           },
+           header: {
+             'content-type': 'application/x-www-form-urlencoded'
+           },
+           method: 'POST',
+           success: function (res) {
+            var arr = [];
+            var farr = [].concat(res.data.persons.fields);
+            var garr = [].concat(res.data.groups);
+            var unarr = [];
+            var ungroup = [];
+            var unfarr = [].concat(res.data.persons.fields);
+            var ungarr = [].concat(res.data.groups);
+            garr.forEach((item)=>{
+              var gmuban = {
+                name:'',
+                check:false,
+                user:[]
+              }
+              gmuban.name = item.name
+              for(var i=0;i<farr.length;i++){
+                for(var j=0;j<item.members.length;j++){
+                  if(farr[i][1]==item.members[j]){
+                    var umuban = {
+                      username:farr[i][0],
+                      email:farr[i][1],
+                      check:false
+                    }
+                    gmuban.user.push(umuban);
+                    
+                  }
+                }
+              }
+              arr.push(gmuban);
+              
+            })
+            ungarr.forEach((item,index)=>{
+              for(var i=0;i<item.members.length;i++){
+                for(var j=0;j<unfarr.length;j++){
+                  if(unfarr[j][1]==item.members[i]){
+                    unfarr.splice(j,1)
+                  }
+                }
+              }
+            })
+            var ungdata ={
+              name:'未分组成员',
+              user:[],
+              check:false,
+            }
+            unfarr.forEach((item,index)=>{
+              var data = {
+                username:item[0],
+                email:item[1],
+                check:false
+              }
+              ungdata.user.push(data)         
+            })
+            
+            arr.push(ungdata);
+            var allmuban={
+              name:'所有成员',
+              check:true,
+              user:[]
+            }
+            farr.forEach((item,index)=>{
+              var allusermuban={
+                username:item[0],
+                email:item[1],
+                check:false
+              }
+              allmuban.user.push(allusermuban)
+            })
+            arr.unshift(allmuban)
+            self.Grouplist = arr
+            self.$apply()
+            wepy.hideLoading()
+           }
+         });
+    }
+  }
+</script>

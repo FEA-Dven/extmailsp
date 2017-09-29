@@ -1,0 +1,88 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/index',
+      'pages/inbox',
+      'pages/maillist',
+      'pages/mailinfo',
+      'pages/userlist',
+      'pages/write',
+      'pages/setting',
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#0089ce',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'white'
+    },
+    tabBar: {
+    color: '#515151',
+    selectedColor: '#0089ce',
+    borderStyle: 'black',
+    list: [
+      {
+        selectedIconPath: './assets/b_letter.png',
+        iconPath: './assets/h_letter.png',
+        pagePath: 'pages/inbox',
+        text: '文件夹'
+      },
+      {
+        selectedIconPath: './assets/b_brush.png',
+        iconPath: './assets/h_brush.png',
+        pagePath: 'pages/write',
+        text: '写信'
+      },
+      {
+        selectedIconPath: './assets/b_group_fill.png',
+        iconPath: './assets/group_fill.png',
+        pagePath: 'pages/userlist',
+        text: '通信录'
+      },
+      {
+        selectedIconPath: './assets/b_set.png',
+        iconPath: './assets/h_set.png',
+        pagePath: 'pages/setting',
+        text: '设置'
+      }
+    ]
+  },
+
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+  }
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success (res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>

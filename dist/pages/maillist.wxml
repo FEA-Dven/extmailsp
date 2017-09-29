@@ -1,0 +1,42 @@
+
+  <view class="header">
+      <image class="inboxlogo" src="../assets/mylogo.png" alt=""/>
+      <view class="searchdiv">
+        <image  wx:if="{{!isSearch}}" src="../assets/search.png" class="searchpic" alt="" bindtap="czMail"/>
+        <image  wx:if="{{isSearch}}" src="../assets/b_cha.png" class="searchpic" alt="" bindtap="czMail"/>
+        <input type="text" class="searchInput" bindinput="getsearchInput"/>
+      </view>
+    </view>
+    <view class="headinfo">
+      <image class="left" src="../assets/b_left.png" bindtap="back" alt=""/>
+      <text class="foldername">{{SelectFolderName}}</text>
+    </view>
+    <block  wx:for="{{MailList}}" wx:key="index">
+        <view class="maillist {{item.check ? 's_maillist' : ''}}" >
+          <view class="kgdiv">
+          <view class="checkeritem {{item.check ? 'demo1-item-selected' : ''}}" data-index="{{index}}" catchtap="changeCheck"/>
+          </view>
+          <view class="mailtheme" catchtap="getMailInfo" data-msgid="{{item.msg_id}}">
+            <view class="sendtor {{!item.attr.read ? 'b_sendtor' : ''}}">{{item.from.name}}</view>
+            <view class="title">{{item.subject}}</view>
+            <view class="zhuti">{{item.date_sent}}</view>
+          </view>
+        </view>
+    </block>
+    <view class="maillistfooter">
+        <view class="allSelect {{allselect ? 'check' : ''}}"  bindtap="AllSelect"/>
+        <view class="s_length"  wx:if="{{demo1.length > 0}}">{{SmailLength}}</view>
+        <image src="../assets/h_close.png" class="closebtn {{!clearSelect ? 'hide' : ''}}" bindtap="clear" alt=""/>
+        <picker bindchange="move" value="{{index}}" data-id="{{item.id}}" range-key="name" range="{{folders}}">
+          <button class="defaultbtn">移动到</button>
+        </picker>
+        <button class="defaultbtn" bindtap="Delmail">删除</button>
+        <picker bindchange="showaction" value="{{index}}" range-key="name" data-id="{{id}}" range="{{action}}">
+          <button class="defaultbtn"><image class="slh" src="../assets/h_slh.png" alt=""/></button>
+        </picker>
+        <view class="pagecount {{clearSelect ? 'pagecounttwo' : ''}}">
+          <image class="imgleft" bindtap="pageTurnLeft" src="../assets/h_left.png" alt=""/>
+          <view class="pageinfo">1 / 1</view>
+          <image class="imgright" bindtap="pageTurnRight" src="../assets/h_right.png" alt=""/>
+        </view>
+      </view>

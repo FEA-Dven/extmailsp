@@ -1,0 +1,226 @@
+
+@import "../wxParse/wxParse.wxss";
+.header{
+    width:100%;
+    height: 40px;
+    border-bottom:1px solid #dadada;
+    position:relative;
+    text-align:center;
+  }
+  .inboxlogo{
+    float:left;
+    margin-top:11px;
+    height: 23px; 
+    width: 103px;
+    margin-left:15px;
+  }
+.backbtn{
+  width:30px;
+  height:30px;
+  float:left;
+  margin-top:15px;
+}
+.shanchubtn{
+  width:26px;
+  height:26px;
+  float:right;
+  margin-top:17px;
+  margin-right:20px;
+}
+.relaybtn{
+  width:26px;
+  height:26px;
+  float:right;
+  margin-top:17px;
+  margin-right:20px;
+}
+.slhbtn{
+  width:30px;
+  height:30px;
+  float:right;
+  margin-top:15px;
+  margin-right:20px;
+}
+.header>img{
+   
+    height: 25px;
+}
+.headmethods{
+  width:100%;
+  height: 60px;
+  float:left;
+  border-bottom:1px solid #dadada;
+  padding:0 10px;
+  box-sizing:border-box;
+}
+.detail{
+    height:auto;
+    width:100%;
+    float:left;
+    padding:0 15px;
+    box-sizing:border-box;
+    background-color: white;
+    border-bottom:1px solid #dadada;
+}
+.title{
+    margin-top:10px;
+    color:#000;
+    font-size:16px;
+    float:left;
+    width:100%;
+    font-weight:600;
+}
+.sendpeople{
+    color:#0089ce;
+    font-weight:600;
+    float:left;
+    margin-top:10px;
+    font-size:14px;
+}
+.simple{
+    width:100%;
+    height:auto;
+
+}
+.nosimple{
+    width:100%;
+    height:auto;
+}
+.sendtordiv{
+    width:100%;
+    float:left;
+    margin-top:10px;
+}
+.note{
+    float:left;
+    width:20%;
+    height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+.sendtordiv{
+    float:left;
+    width:100%;
+    position:relative;
+}
+.getdiv{
+    float:left;
+    width:100%;
+}
+.timediv{
+    float:left;
+    width:100%;
+}
+.ccdiv{
+    float:left;
+    width:100%;
+}
+.info{
+    float:left;
+    width:72%;
+    word-break:break-all;
+}
+.name{
+    float:left;
+    width:auto;
+    font-size:14px;
+}
+.address{
+    float:left;
+    width:auto;
+    color:#a0a8c0;
+    font-size:12px;
+    margin-top:2px;
+    
+}
+.time{
+    color:#a0a8c0;
+    float:right;
+    font-size:12px;
+    margin-top:12px;
+    margin-right: 5px;
+}
+.d_time{
+    color:#a0a8c0;
+    float:left;
+    font-size:12px;
+    margin-top:2px;
+}
+.fordetail{
+    color:#0089ce;
+    float:right;
+    margin-top:10px;
+    font-size:14px;
+    cursor:pointer;
+}
+.forsimple{
+    color:#0089ce;
+    font-size:14px;
+    cursor:pointer;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.theme{
+    box-sizing:border-box;
+    padding:0 15px;
+    border-bottom:1px solid #dadada;
+    float:left;
+    width:100%;
+}
+.textdiv{
+    background-color: #f2f2f2;
+    height:180px;
+    width:100%;
+    box-sizing:border-box;
+    padding:0 15px;
+    float:left;
+    margin-top:50px;
+}
+.content{
+    resize:none;
+    width:100%;
+    height:60px;
+    margin-top:50px;
+    float:left;
+    border-radius:7px;
+    outline:none;
+    padding:15px 15px;
+    box-sizing:border-box;
+    font-size:14px;
+} 
+.reply{
+    background-color: #0089ce;
+    border-radius:7px;
+    width:50px;
+    height: 30px;
+    color:white;
+    line-height:30px;
+    border:1px solid #0089ce;
+    float:right;
+    margin-top:15px;
+    margin-right: 10px;
+    font-size:12px;
+    text-align:center;
+    cursor:pointer;
+    outline:none;
+}
+.footfont{
+    text-align:center;
+    color:#a0a8c0;
+    float:left;
+    width:100%;
+    font-size:12px;
+    margin-top:20px;
+}
+.logo{
+    margin-top:5px;
+}
+.hide{
+  display:none;
+}
+.blank{
+  width:100%;
+  float:left;
+  height: 100px;
+}
